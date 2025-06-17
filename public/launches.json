@@ -1,0 +1,16 @@
+[
+  {
+    "id": "apollo-11",
+    "name": "Apollo 11",
+    "date": "1969-07-16T13:32:00Z",
+    "organization": "NASA",
+    "vehicle": "Saturn V",
+    "mission_type": "Crewed Lunar Landing",
+    "launch_site": "Kennedy Space Center LC-39A",
+    "success": true,
+    "destination": "Moon",
+    "details": "First manned Moon landing. Armstrong, Aldrin, and Collins.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Apollo_11_Lunar_Module_on_the_Moon.jpg",
+    "info_url": "https://en.wikipedia.org/wiki/Apollo_11"
+  }
+]
