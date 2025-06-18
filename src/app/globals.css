@@ -32,10 +32,10 @@ body {
 }
 
 .vertical-timeline-element-date {
-  font-weight: bold;
-  font-size: 2rem;
-  padding-left: 2.5rem;
-  padding-top: 0.25rem;
-  color: white;
-  text-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
+  font-weight: 700 !important;
+  font-size: 1.1rem !important;
+  line-height: 1.1 !important;
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
+  text-shadow: 0 0 6px rgba(0, 255, 255, 0.4), 0 0 2px #3b82f6;
 }

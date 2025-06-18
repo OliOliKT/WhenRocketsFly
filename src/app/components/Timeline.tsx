@@ -81,9 +81,9 @@ export default function Timeline() {
           const cardColor = isNow
             ? "#22c55e"
             : launch.organization === "NASA"
-            ? "#0b3d91"
+            ? "#2a5dbd"
             : launch.organization === "SpaceX"
-            ? "#005288"
+            ? "#2c8ed6"
             : "#3b82f6";
 
           return (
@@ -105,13 +105,7 @@ export default function Timeline() {
                 }}
                 contentArrowStyle={{ borderRight: `7px solid ${cardColor}` }}
               iconStyle={{
-                background: isNow
-                  ? "#22c55e"
-                  : launch.organization === "NASA"
-                  ? "#0b3d91"
-                  : launch.organization === "SpaceX"
-                  ? "#005288"
-                  : "#3b82f6",
+                background: cardColor,
                 boxShadow: "0 0 10px rgba(255, 255, 255, 0.4)",
               }}
               icon={
@@ -131,27 +125,21 @@ export default function Timeline() {
                     {launch.name}
                 </h3>
                 {!isNow && (
-                  <>
-                    <h4 className="text-sm text-white mb-1">
-                      {launch.organization}
-                    </h4>
+                <>
+                    <h4 className="text-sm text-white mb-1">{launch.organization}</h4>
                     <p>
-                      <span className="text-indigo-400">🚀 Vehicle:</span>{" "}
-                      {launch.vehicle}
+                    <span style={{ color: cardColor }}>🚀 Vehicle:</span> {launch.vehicle}
                     </p>
                     <p>
-                      <span className="text-indigo-400">🛰 Mission:</span>{" "}
-                      {launch.mission_type}
+                    <span style={{ color: cardColor }}>🛰 Mission:</span> {launch.mission_type}
                     </p>
                     <p>
-                      <span className="text-indigo-400">🌍 Destination:</span>{" "}
-                      {launch.destination}
+                    <span style={{ color: cardColor }}>🌍 Destination:</span> {launch.destination}
                     </p>
                     <p>
-                      <span className="text-indigo-400">📍 Site:</span>{" "}
-                      {launch.launch_site}
+                    <span style={{ color: cardColor }}>📍 Site:</span> {launch.launch_site}
                     </p>
-                  </>
+                </>
                 )}
                 <p className="mt-2 text-gray-300">{launch.details}</p>
                 {launch.info_url && (
@@ -159,9 +147,11 @@ export default function Timeline() {
                     href={launch.info_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-500 hover:text-blue-300 hover:underline mt-2 inline-block transition"
+                    className="hover:text-blue-300 hover:underline mt-2 inline-block transition"
                   >
+                    <span style={{ color: cardColor }}>
                     Learn more
+                    </span>
                   </a>
                 )}
               </div>
