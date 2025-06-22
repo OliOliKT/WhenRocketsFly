@@ -109,15 +109,17 @@ export default function Timeline({ launches }: TimelineProps) {
       <VerticalTimeline>
         {launches.map((launch) => {
           const isNow = launch.id === "now";
+          const isDecadeMarker = launch.id.startsWith("decade-");
+          const isSpecial = isNow || isDecadeMarker;
 
           const orgData = organizationMap[launch.organization] || {
             color: "#3b82f6",
             icon: <IoIosRocket />
           };
 
-          const cardColor = isNow ? "#22c55e" : orgData.color;
+          const cardColor = isSpecial ? "#22c55e" : orgData.color;
 
-          const iconNode = isNow ? (
+          const iconNode = isSpecial ? (
             <FaClock />
           ) : orgData.image ? (
             <div className="w-full h-full flex items-center justify-center">
@@ -158,44 +160,42 @@ export default function Timeline({ launches }: TimelineProps) {
               icon={iconNode}
             >
               <div ref={isNow ? nowRef : undefined}>
-                <h3 className="font-bold text-xl" style={{ color: cardColor }}>
-                  {launch.name}
-                </h3>
-                {!isNow && (
-                  <>
-                    <h4 className="text-sm text-white mb-1">
-                      {launch.organization}
-                    </h4>
-                    <p>
-                      <span style={{ color: cardColor }}>🚀 Vehicle:</span>{" "}
-                      {launch.vehicle}
-                    </p>
-                    <p>
-                      <span style={{ color: cardColor }}>🛰 Mission:</span>{" "}
-                      {launch.mission_type}
-                    </p>
-                    <p>
-                      <span style={{ color: cardColor }}>🌍 Destination:</span>{" "}
-                      {launch.destination}
-                    </p>
-                    <p>
-                      <span style={{ color: cardColor }}>📍 Site:</span>{" "}
-                      {launch.launch_site}
-                    </p>
-                  </>
-                )}
-                <p className="mt-2 text-gray-300">{launch.details}</p>
-                {launch.info_url && (
-                  <a
-                    href={launch.info_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-blue-300 hover:underline mt-2 inline-block transition"
-                  >
-                    <span style={{ color: cardColor }}>Learn more</span>
-                  </a>
-                )}
-              </div>
+              <h3 className="font-bold text-xl" style={{ color: cardColor }}>
+                {launch.name}
+              </h3>
+
+              {!isSpecial && (
+                <>
+                  <h4 className="text-sm text-white mb-1">{launch.organization}</h4>
+                  <p>
+                    <span style={{ color: cardColor }}>🚀 Vehicle:</span> {launch.vehicle}
+                  </p>
+                  <p>
+                    <span style={{ color: cardColor }}>🛰 Mission:</span>{" "}
+                    {launch.mission_type}
+                  </p>
+                  <p>
+                    <span style={{ color: cardColor }}>🌍 Destination:</span>{" "}
+                    {launch.destination}
+                  </p>
+                  <p>
+                    <span style={{ color: cardColor }}>📍 Site:</span> {launch.launch_site}
+                  </p>
+                </>
+              )}
+
+              <p className="mt-2 text-gray-300">{launch.details}</p>
+              {launch.info_url && (
+                <a
+                  href={launch.info_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-blue-300 hover:underline mt-2 inline-block transition"
+                >
+                  <span style={{ color: cardColor }}>Learn more</span>
+                </a>
+              )}
+            </div>
             </VerticalTimelineElement>
           );
         })}
