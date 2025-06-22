@@ -2236,19 +2236,6 @@
   "info_url": "https://www.nasa.gov/mission_pages/station/research/experiments/1804.html"
 },
 {
-  "id": "oumuamua",
-  "name": "ʻOumuamua Observation",
-  "date": "2017-10-19T00:00:00Z",
-  "organization": "Pan-STARRS / NASA",
-  "vehicle": "N/A (Astronomical Observation)",
-  "mission_type": "Interstellar Object Observation",
-  "launch_site": "Haleakalā Observatory, Hawaii",
-  "success": true,
-  "destination": "N/A",
-  "details": "ʻOumuamua was the first known interstellar object detected passing through the solar system. It sparked major interest due to its unusual trajectory and characteristics.",
-  "info_url": "https://solarsystem.nasa.gov/planets/oumuamua/overview/"
-},
-{
   "id": "hayabusa2",
   "name": "Hayabusa2",
   "date": "2014-12-03T04:22:00Z",

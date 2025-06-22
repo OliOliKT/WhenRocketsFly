@@ -1,6 +1,6 @@
 "use client";
 
-import { JSX, useEffect, useRef, useState } from "react";
+import { JSX, useEffect, useRef } from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement
@@ -13,18 +13,8 @@ import { SiNasa, SiSpacex } from "react-icons/si";
 import { GiHammerSickle } from "react-icons/gi";
 import { LiaFlagUsaSolid } from "react-icons/lia";
 
-type Launch = {
-  id: string;
-  name: string;
-  date: string;
-  organization: string;
-  vehicle: string;
-  mission_type: string;
-  launch_site: string;
-  success: boolean | null;
-  destination: string;
-  details: string;
-  info_url: string;
+type TimelineProps = {
+  launches: Launch[];
 };
 
 const organizationMap: Record<
@@ -49,23 +39,23 @@ const organizationMap: Record<
   },
   USA: {
     color: "rgb(66, 138, 204)",
-    icon: < LiaFlagUsaSolid />,
+    icon: <LiaFlagUsaSolid />,
   },
   "Soviet Union": {
     color: "#cc3333",
     icon: <GiHammerSickle />,
   },
-    "United States (NRL / USA)": {
+  "United States (NRL / USA)": {
     color: "rgb(66, 138, 204)",
-    icon: < LiaFlagUsaSolid />,
+    icon: <LiaFlagUsaSolid />,
   },
-    "United States (ABMA / JPL)": {
+  "United States (ABMA / JPL)": {
     color: "rgb(66, 138, 204)",
-    icon: < LiaFlagUsaSolid />,
+    icon: <LiaFlagUsaSolid />,
   },
   "United States (NRO/CIA)": {
     color: "rgb(66, 138, 204)",
-    icon: < LiaFlagUsaSolid />,
+    icon: <LiaFlagUsaSolid />,
   },
   "Blue Origin": {
     color: "white",
@@ -95,54 +85,26 @@ const organizationMap: Record<
     color: "grey",
     image: "/logos/Norway.png"
   },
-    "Firefly Aerospace": {
+  "Firefly Aerospace": {
     color: "lightgrey",
     image: "/logos/Firefly.png"
   },
 };
 
-export default function Timeline() {
-  const [launches, setLaunches] = useState<Launch[]>([]);
+export default function Timeline({ launches }: TimelineProps) {
   const nowRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    fetch("/launches.json")
-      .then((res) => res.json())
-      .then((data) => {
-        const now = new Date().toISOString();
-
-        const currentTimeEntry: Launch = {
-          id: "now",
-          name: "You are here",
-          date: now,
-          organization: "",
-          vehicle: "",
-          mission_type: "Current Time",
-          launch_site: "",
-          success: null,
-          destination: "",
-          details:
-            "This marker represents the current moment in space exploration history.",
-          info_url: ""
-        };
-
-        const combined = [...data, currentTimeEntry].sort(
-          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-        );
-
-        setLaunches(combined);
-
-        requestAnimationFrame(() => {
-          nowRef.current?.scrollIntoView({
-            behavior: "auto",
-            block: "center"
-          });
-        });
+    requestAnimationFrame(() => {
+      nowRef.current?.scrollIntoView({
+        behavior: "auto",
+        block: "center"
       });
+    });
   }, []);
 
   return (
-    <div className="py-10">
+    <div className="py-10 fade-in">
       <VerticalTimeline>
         {launches.map((launch) => {
           const isNow = launch.id === "now";
@@ -156,19 +118,19 @@ export default function Timeline() {
 
           const iconNode = isNow ? (
             <FaClock />
-            ) : orgData.image ? (
+          ) : orgData.image ? (
             <div className="w-full h-full flex items-center justify-center">
-                <img
+              <img
                 src={orgData.image}
                 alt={launch.organization}
                 className="w-[70%] h-[70%] object-contain"
-                />
+              />
             </div>
-            ) : orgData.icon ? (
+          ) : orgData.icon ? (
             orgData.icon
-            ) : (
+          ) : (
             <IoIosRocket />
-            );
+          );
 
           return (
             <VerticalTimelineElement

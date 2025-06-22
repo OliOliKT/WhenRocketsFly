@@ -3,21 +3,52 @@
 import { useEffect, useState } from "react";
 import Timeline from "@/app/components/Timeline";
 import StarfieldBackground from "@/app/components/StarFieldBackground";
+import FilterBar from "@/app/components/FilterBar";
 import LoadingScreen from "@/app/components/LoadingScreen";
-import { HiArrowUp, HiArrowDown } from "react-icons/hi";
+import ScrollIndicator from "@/app/components/ScrollIndicator";
+
 
 export default function HomePage() {
+  const [launches, setLaunches] = useState<Launch[]>([]);
+  const [filtered, setFiltered] = useState<Launch[]>([]);
+  const [filters, setFilters] = useState({ mission: "", destination: "" });
   const [scrollPercent, setScrollPercent] = useState(15);
-  const [loading, setLoading] = useState(true);
-  const [showContent, setShowContent] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-      setTimeout(() => setShowContent(true), 50);
-    }, 0);
-    return () => clearTimeout(timer);
+    fetch("/launches.json")
+      .then(res => res.json())
+      .then(data => {
+        const now = new Date().toISOString();
+        const currentTimeEntry: Launch = {
+          id: "now",
+          name: "You are here",
+          date: now,
+          organization: "",
+          vehicle: "",
+          mission_type: "",
+          launch_site: "",
+          success: null,
+          destination: "",
+          details: "This marker represents the current moment in space exploration history.",
+          info_url: ""
+        };
+        const combined = [...data, currentTimeEntry].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+        setLaunches(combined);
+        setFiltered(combined);
+        setTimeout(() => setIsLoading(false), 1500);
+      });
   }, []);
+
+  useEffect(() => {
+    setFiltered(
+      launches.filter(l => {
+        const matchesMission = filters.mission ? l.mission_type === filters.mission : true;
+        const matchesDestination = filters.destination ? l.destination === filters.destination : true;
+        return matchesMission && matchesDestination;
+      })
+    );
+  }, [filters, launches]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,59 +57,21 @@ export default function HomePage() {
       const percentage = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
       setScrollPercent(percentage);
     };
-
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  if (isLoading) return <LoadingScreen />;
 
   return (
     <>
       <StarfieldBackground />
 
-      {loading && <LoadingScreen />}
+      <FilterBar launches={launches} onFilterChange={setFilters} />
 
-      {/* Vertical timeline line */}
-      {!loading && (
-        <div className="fixed left-4 top-0 bottom-0 z-20 hidden md:flex flex-col items-center text-gray-400 font-mono pointer-events-none select-none">
-          <div className="mt-4 flex flex-col items-center gap-1">
-            <HiArrowUp className="w-5 h-5" />
-            <span className="text-xs">Future</span>
-          </div>
-
-          <div className="w-px flex-1 bg-gray-600 relative mt-2 mb-2">
-            <div
-              className="absolute left-2 text-green-400 text-xs font-bold tracking-wider"
-              style={{ top: "2.5%" }}
-            >
-              Today
-            </div>
-            <div
-              className="absolute -left-1 w-2 h-2 rounded-full bg-green-400 shadow-md"
-              style={{ top: "3%" }}
-            ></div>
-            <div
-              className="absolute -left-1 w-2 h-2 rounded-full bg-blue-500 shadow-lg transition-all duration-100"
-              style={{ top: `${scrollPercent}%` }}
-            ></div>
-          </div>
-
-          <div className="mb-4 flex flex-col items-center gap-1">
-            <HiArrowDown className="w-5 h-5" />
-            <span className="text-xs">Past</span>
-          </div>
-        </div>
-      )}
-
-      {/* Main content fade-in */}
-      <main
-        className={`max-w-4xl mx-auto px-4 text-white relative z-10 transition-opacity duration-1000 ${
-          showContent ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        <h1 className="text-3xl font-bold mt-10 mb-6 text-center">
-          All past and future space missions
-        </h1>
-        <Timeline />
+      <main className="max-w-4xl mx-auto px-4 text-white relative z-10">
+        <ScrollIndicator scrollPercent={scrollPercent} />
+        <Timeline launches={filtered} />
       </main>
     </>
   );
