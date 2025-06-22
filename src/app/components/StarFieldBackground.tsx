@@ -3,9 +3,10 @@
 import { useCallback, memo } from "react";
 import Particles from "react-tsparticles";
 import { loadStarsPreset } from "tsparticles-preset-stars";
+import { Engine } from "tsparticles-engine";
 
 function StarfieldBackgroundComponent() {
-  const particlesInit = useCallback(async (engine: any) => {
+  const particlesInit = useCallback(async (engine: Engine) => {
     await loadStarsPreset(engine);
   }, []);
 

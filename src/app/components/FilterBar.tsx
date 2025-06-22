@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { HiChevronDown } from "react-icons/hi";
+import type { Launch } from "../types"
 
 type FilterBarProps = {
   launches: Launch[];

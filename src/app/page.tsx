@@ -6,6 +6,7 @@ import StarfieldBackground from "@/app/components/StarFieldBackground";
 import FilterBar from "@/app/components/FilterBar";
 import LoadingScreen from "@/app/components/LoadingScreen";
 import ScrollIndicator from "@/app/components/ScrollIndicator";
+import type { Launch } from "../app/types"
 
 
 export default function HomePage() {

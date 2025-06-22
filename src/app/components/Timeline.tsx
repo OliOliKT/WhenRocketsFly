@@ -1,6 +1,7 @@
 "use client";
 
 import { JSX, useEffect, useRef } from "react";
+import type { Launch } from "../types"
 import {
   VerticalTimeline,
   VerticalTimelineElement
