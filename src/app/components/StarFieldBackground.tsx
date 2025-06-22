@@ -1,10 +1,10 @@
 "use client";
 
-import { useCallback } from "react";
+import { useCallback, memo } from "react";
 import Particles from "react-tsparticles";
 import { loadStarsPreset } from "tsparticles-preset-stars";
 
-export default function StarfieldBackground() {
+function StarfieldBackgroundComponent() {
   const particlesInit = useCallback(async (engine: any) => {
     await loadStarsPreset(engine);
   }, []);
@@ -18,40 +18,22 @@ export default function StarfieldBackground() {
         fullScreen: { enable: true, zIndex: -1 },
         interactivity: {
           events: {
-            onClick: {
-              enable: true,
-              mode: "push"
-            },
-            onHover: {
-              enable: true,
-              mode: "repulse"
-            },
+            onClick: { enable: true, mode: "push" },
+            onHover: { enable: true, mode: "repulse" },
             resize: true
           },
           modes: {
-            push: {
-              quantity: 4
-            },
-            repulse: {
-              distance: 100,
-              duration: 0.4
-            }
+            push: { quantity: 4 },
+            repulse: { distance: 100, duration: 0.4 }
           }
         },
         particles: {
           number: {
             value: 100,
-            density: {
-              enable: true,
-              area: 800
-            }
+            density: { enable: true, area: 800 }
           },
-          color: {
-            value: "#ffffff"
-          },
-          shape: {
-            type: "circle"
-          },
+          color: { value: "#ffffff" },
+          shape: { type: "circle" },
           opacity: {
             value: 1,
             random: true,
@@ -62,10 +44,7 @@ export default function StarfieldBackground() {
               sync: false
             }
           },
-          size: {
-            value: 2,
-            random: true
-          },
+          size: { value: 2, random: true },
           move: {
             enable: true,
             speed: 0.2,
@@ -73,9 +52,7 @@ export default function StarfieldBackground() {
             random: true,
             straight: false,
             outMode: "out",
-            attract: {
-              enable: false
-            }
+            attract: { enable: false }
           },
           twinkle: {
             particles: {
@@ -90,3 +67,7 @@ export default function StarfieldBackground() {
     />
   );
 }
+
+// 🧠 Memoized version to prevent re-renders on scroll
+const StarfieldBackground = memo(StarfieldBackgroundComponent);
+export default StarfieldBackground;
