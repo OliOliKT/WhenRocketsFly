@@ -13,12 +13,30 @@ export default function FilterBar({ launches, onFilterChange }: FilterBarProps) 
   const [mission, setMission] = useState("");
   const [destination, setDestination] = useState("");
 
-  const missionTypes = Array.from(new Set(launches.map(l => l.mission_type).filter(Boolean))).sort();
-  const destinations = Array.from(new Set(launches.map(l => l.destination).filter(Boolean))).sort();
+  const missionTypes = Array.from(
+    new Set(
+      launches.flatMap(l =>
+        Array.isArray(l.mission_type) ? l.mission_type : [l.mission_type]
+      ).filter(Boolean)
+    )
+  ).sort();
+
+  const destinations = Array.from(
+    new Set(
+      launches.flatMap(l =>
+        Array.isArray(l.destination) ? l.destination : [l.destination]
+      ).filter(Boolean)
+    )
+  ).sort();
 
   useEffect(() => {
     onFilterChange({ mission, destination });
   }, [mission, destination]);
+
+  const resetFilters = () => {
+    setMission("");
+    setDestination("");
+  };
 
   return (
     <div className="sticky top-0 z-30 w-full bg-gradient-to-r from-black via-slate-900 to-black backdrop-blur-sm shadow-md border-b border-slate-800 px-3 py-2">
@@ -39,8 +57,8 @@ export default function FilterBar({ launches, onFilterChange }: FilterBarProps) 
           </div>
         </div>
 
-        {/* Filters only show on small screens and up */}
-        <div className="hidden sm:flex gap-2 sm:gap-3">
+        {/* Filters + reset */}
+        <div className="hidden sm:flex items-end gap-2 sm:gap-3">
           <Dropdown
             label="Mission"
             value={mission}
@@ -53,6 +71,15 @@ export default function FilterBar({ launches, onFilterChange }: FilterBarProps) 
             onChange={setDestination}
             options={destinations}
           />
+          {(mission || destination) && (
+            <button
+              onClick={resetFilters}
+              className="text-xs text-slate-300 border border-slate-600 rounded px-2 py-1 hover:text-white hover:border-white transition"
+              title="Reset filters"
+            >
+              Reset
+            </button>
+          )}
         </div>
       </div>
     </div>

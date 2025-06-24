@@ -4,10 +4,10 @@ export type Launch = {
   date: string;
   organization: string;
   vehicle: string;
-  mission_type: string;
+  mission_type: string[];
   launch_site: string;
   success: boolean | null;
-  destination: string;
+  destination: string[];
   details: string;
   info_url: string;
 };

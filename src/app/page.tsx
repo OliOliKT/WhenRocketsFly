@@ -6,8 +6,7 @@ import StarfieldBackground from "@/app/components/StarFieldBackground";
 import FilterBar from "@/app/components/FilterBar";
 import LoadingScreen from "@/app/components/LoadingScreen";
 import ScrollIndicator from "@/app/components/ScrollIndicator";
-import type { Launch } from "../app/types"
-
+import type { Launch } from "../app/types";
 
 export default function HomePage() {
   const [launches, setLaunches] = useState<Launch[]>([]);
@@ -27,14 +26,16 @@ export default function HomePage() {
           date: now,
           organization: "",
           vehicle: "",
-          mission_type: "",
+          mission_type: [],
           launch_site: "",
           success: null,
-          destination: "",
+          destination: [],
           details: "This marker represents the current moment in space exploration history.",
           info_url: ""
         };
-        const combined = [...data, currentTimeEntry].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+        const combined = [...data, currentTimeEntry].sort(
+          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+        );
         setLaunches(combined);
         setFiltered(combined);
         setTimeout(() => setIsLoading(false), 1500);
@@ -42,12 +43,17 @@ export default function HomePage() {
   }, []);
 
   useEffect(() => {
+    const matchesFilter = (value: string | string[], selected: string) => {
+      if (!selected) return true;
+      if (Array.isArray(value)) return value.includes(selected);
+      return value === selected;
+    };
+
     setFiltered(
-      launches.filter(l => {
-        const matchesMission = filters.mission ? l.mission_type === filters.mission : true;
-        const matchesDestination = filters.destination ? l.destination === filters.destination : true;
-        return matchesMission && matchesDestination;
-      })
+      launches.filter((l) =>
+        matchesFilter(l.mission_type, filters.mission) &&
+        matchesFilter(l.destination, filters.destination)
+      )
     );
   }, [filters, launches]);
 
@@ -67,9 +73,7 @@ export default function HomePage() {
   return (
     <>
       <StarfieldBackground />
-
       <FilterBar launches={launches} onFilterChange={setFilters} />
-
       <main className="max-w-4xl mx-auto px-4 text-white relative z-10">
         <ScrollIndicator scrollPercent={scrollPercent} />
         <Timeline launches={filtered} />
