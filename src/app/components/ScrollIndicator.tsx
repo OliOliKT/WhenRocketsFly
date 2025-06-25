@@ -7,14 +7,14 @@ type ScrollIndicatorProps = {
 };
 
 const markers = [
-  { label: "Today", top: "1.5%" },
-  { label: "2020s", top: "13%" },
-  { label: "2010s", top: "25%" },
-  { label: "2000s", top: "34%" },
-  { label: "1990s", top: "43.5%" },
-  { label: "1980s", top: "50%" },
-  { label: "1970s", top: "66%" },
-  { label: "1960s", top: "96.5%" },
+  { label: "Today", top: "4%" },
+  { label: "2020s", top: "16.5%" },
+  { label: "2010s", top: "28%" },
+  { label: "2000s", top: "37%" },
+  { label: "1990s", top: "46%" },
+  { label: "1980s", top: "52.5%" },
+  { label: "1970s", top: "67.5%" },
+  { label: "1960s", top: "97%" },
 ];
 
 export default function ScrollIndicator({ scrollPercent }: ScrollIndicatorProps) {
