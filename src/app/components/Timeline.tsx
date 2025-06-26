@@ -83,7 +83,10 @@ export default function Timeline({ launches }: TimelineProps) {
           const isDecadeMarker = launch.id.startsWith("decade-");
           const isSpecial = isNow || isDecadeMarker;
 
-          const orgData = organizationMap[launch.organization] || {
+          const firstOrg = Array.isArray(launch.organization)
+            ? launch.organization[0]
+            : launch.organization;
+          const orgData = organizationMap[firstOrg] || {
             color: "#3b82f6",
             icon: <IoIosRocket />
           };
@@ -96,7 +99,7 @@ export default function Timeline({ launches }: TimelineProps) {
             <div className="w-full h-full flex items-center justify-center">
               <img
                 src={orgData.image}
-                alt={launch.organization}
+                alt={firstOrg}
                 className="w-[70%] h-[70%] object-contain"
               />
             </div>
@@ -137,7 +140,9 @@ export default function Timeline({ launches }: TimelineProps) {
 
                 {!isSpecial && (
                   <>
-                    <h4 className="text-sm text-white mb-1">{launch.organization}</h4>
+                    <h4 className="text-sm text-white mb-1">
+                      {formatList(launch.organization)}
+                    </h4>
                     <p>
                       <span style={{ color: cardColor }}>🚀 Vehicle:</span> {launch.vehicle}
                     </p>

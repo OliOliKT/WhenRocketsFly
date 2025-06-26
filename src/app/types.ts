@@ -2,7 +2,7 @@ export type Launch = {
   id: string;
   name: string;
   date: string;
-  organization: string;
+  organization: string[];
   vehicle: string;
   mission_type: string[];
   launch_site: string;

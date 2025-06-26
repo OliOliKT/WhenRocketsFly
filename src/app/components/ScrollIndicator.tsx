@@ -7,7 +7,7 @@ type ScrollIndicatorProps = {
 };
 
 const markers = [
-  { label: "Today", top: "4%" },
+  { label: "Today", top: "5%" },
   { label: "2020s", top: "16.5%" },
   { label: "2010s", top: "28%" },
   { label: "2000s", top: "37%" },

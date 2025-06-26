@@ -6,36 +6,47 @@ import type { Launch } from "../types";
 
 type FilterBarProps = {
   launches: Launch[];
-  onFilterChange: (filters: { mission: string; destination: string }) => void;
+  onFilterChange: (filters: {
+    mission: string;
+    destination: string;
+    organization: string;
+  }) => void;
 };
 
 export default function FilterBar({ launches, onFilterChange }: FilterBarProps) {
   const [mission, setMission] = useState("");
   const [destination, setDestination] = useState("");
+  const [organization, setOrganization] = useState("");
 
   const missionTypes = Array.from(
     new Set(
-      launches.flatMap(l =>
-        Array.isArray(l.mission_type) ? l.mission_type : [l.mission_type]
-      ).filter(Boolean)
+      launches.flatMap(l => Array.isArray(l.mission_type) ? l.mission_type : [l.mission_type])
+        .filter(Boolean)
     )
   ).sort();
 
   const destinations = Array.from(
     new Set(
-      launches.flatMap(l =>
-        Array.isArray(l.destination) ? l.destination : [l.destination]
-      ).filter(Boolean)
+      launches.flatMap(l => Array.isArray(l.destination) ? l.destination : [l.destination])
+        .filter(Boolean)
+    )
+  ).sort();
+
+  const organizations = Array.from(
+    new Set(
+      launches.flatMap(l => Array.isArray(l.organization) ? l.organization : [l.organization])
+        .filter(Boolean)
     )
   ).sort();
 
   useEffect(() => {
-    onFilterChange({ mission, destination });
-  }, [mission, destination]);
+    onFilterChange({ mission, destination, organization });
+  }, [mission, destination, organization]);
 
   const resetFilters = () => {
     setMission("");
     setDestination("");
+    setOrganization("");
   };
 
   return (
@@ -57,7 +68,6 @@ export default function FilterBar({ launches, onFilterChange }: FilterBarProps) 
           </div>
         </div>
 
-        {/* Filters + reset */}
         <div className="hidden sm:flex items-end gap-2 sm:gap-3">
           <Dropdown
             label="Mission"
@@ -71,7 +81,13 @@ export default function FilterBar({ launches, onFilterChange }: FilterBarProps) 
             onChange={setDestination}
             options={destinations}
           />
-          {(mission || destination) && (
+          <Dropdown
+            label="Organization"
+            value={organization}
+            onChange={setOrganization}
+            options={organizations}
+          />
+          {(mission || destination || organization) && (
             <button
               onClick={resetFilters}
               className="text-xs text-slate-300 border border-slate-600 rounded px-2 py-1 hover:text-white hover:border-white transition"

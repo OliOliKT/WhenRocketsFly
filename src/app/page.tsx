@@ -11,7 +11,11 @@ import type { Launch } from "../app/types";
 export default function HomePage() {
   const [launches, setLaunches] = useState<Launch[]>([]);
   const [filtered, setFiltered] = useState<Launch[]>([]);
-  const [filters, setFilters] = useState({ mission: "", destination: "" });
+  const [filters, setFilters] = useState({
+    mission: "",
+    destination: "",
+    organization: ""
+  });
   const [scrollPercent, setScrollPercent] = useState(15);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -24,7 +28,7 @@ export default function HomePage() {
           id: "now",
           name: "You are here",
           date: now,
-          organization: "",
+          organization: [],
           vehicle: "",
           mission_type: [],
           launch_site: "",
@@ -52,7 +56,8 @@ export default function HomePage() {
     setFiltered(
       launches.filter((l) =>
         matchesFilter(l.mission_type, filters.mission) &&
-        matchesFilter(l.destination, filters.destination)
+        matchesFilter(l.destination, filters.destination) &&
+        matchesFilter(l.organization, filters.organization)
       )
     );
   }, [filters, launches]);
