@@ -51,9 +51,10 @@ function formatList(value: string | string[]): string {
 
 type TimelineProps = {
   launches: Launch[];
+  decadeRefs: React.MutableRefObject<Record<string, HTMLDivElement | null>>;
 };
 
-export default function Timeline({ launches }: TimelineProps) {
+export default function Timeline({ launches, decadeRefs }: TimelineProps) {
   const nowRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -70,7 +71,7 @@ export default function Timeline({ launches }: TimelineProps) {
       <div className="text-center text-slate-400 py-20 fade-in">
         <div className="text-5xl mb-4">🚫</div>
         <h2 className="text-lg font-semibold">No missions match your filter</h2>
-        <p className="text-sm mt-1">Try changing the mission type or destination.</p>
+        <p className="text-sm mt-1">Try changing the mission type, destination, or organization.</p>
       </div>
     );
   }
@@ -86,6 +87,7 @@ export default function Timeline({ launches }: TimelineProps) {
           const firstOrg = Array.isArray(launch.organization)
             ? launch.organization[0]
             : launch.organization;
+
           const orgData = organizationMap[firstOrg] || {
             color: "#3b82f6",
             icon: <IoIosRocket />
@@ -108,6 +110,13 @@ export default function Timeline({ launches }: TimelineProps) {
           ) : (
             <IoIosRocket />
           );
+
+          const ref = (el: HTMLDivElement | null) => {
+            if (isNow || isDecadeMarker) {
+              decadeRefs.current[launch.id] = el;
+              if (isNow) nowRef.current = el;
+            }
+          };
 
           return (
             <VerticalTimelineElement
@@ -133,7 +142,7 @@ export default function Timeline({ launches }: TimelineProps) {
               }}
               icon={iconNode}
             >
-              <div ref={isNow ? nowRef : undefined}>
+              <div ref={ref}>
                 <h3 className="font-bold text-xl" style={{ color: cardColor }}>
                   {launch.name}
                 </h3>

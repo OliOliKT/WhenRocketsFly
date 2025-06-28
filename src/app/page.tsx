@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Timeline from "@/app/components/Timeline";
 import StarfieldBackground from "@/app/components/StarFieldBackground";
 import FilterBar from "@/app/components/FilterBar";
@@ -18,6 +18,9 @@ export default function HomePage() {
   });
   const [scrollPercent, setScrollPercent] = useState(15);
   const [isLoading, setIsLoading] = useState(true);
+
+  // Keep a ref to all decades, regardless of filters
+  const decadeRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
   useEffect(() => {
     fetch("/launches.json")
@@ -46,21 +49,39 @@ export default function HomePage() {
       });
   }, []);
 
-  useEffect(() => {
-    const matchesFilter = (value: string | string[], selected: string) => {
-      if (!selected) return true;
-      if (Array.isArray(value)) return value.includes(selected);
-      return value === selected;
-    };
+useEffect(() => {
+  const matchesFilter = (value: string | string[], selected: string) => {
+    if (!selected) return true;
+    if (Array.isArray(value)) return value.includes(selected);
+    return value === selected;
+  };
 
-    setFiltered(
-      launches.filter((l) =>
+  const filteredMissions = launches.filter(
+    (l) =>
+      !l.id.startsWith("decade-") &&
+      l.id !== "now" &&
+      matchesFilter(l.mission_type, filters.mission) &&
+      matchesFilter(l.destination, filters.destination) &&
+      matchesFilter(l.organization, filters.organization)
+  );
+
+  const includeDecades = filteredMissions.length >= 8;
+
+  const finalFiltered = launches.filter((l) => {
+    const isNow = l.id === "now";
+    const isDecade = l.id.startsWith("decade-");
+    return (
+      isNow ||
+      (includeDecades && isDecade) ||
+      (!isDecade && !isNow &&
         matchesFilter(l.mission_type, filters.mission) &&
         matchesFilter(l.destination, filters.destination) &&
-        matchesFilter(l.organization, filters.organization)
-      )
+        matchesFilter(l.organization, filters.organization))
     );
-  }, [filters, launches]);
+  });
+
+  setFiltered(finalFiltered);
+}, [filters, launches]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -80,8 +101,8 @@ export default function HomePage() {
       <StarfieldBackground />
       <FilterBar launches={launches} onFilterChange={setFilters} />
       <main className="max-w-4xl mx-auto px-4 text-white relative z-10">
-        <ScrollIndicator scrollPercent={scrollPercent} />
-        <Timeline launches={filtered} />
+        <ScrollIndicator scrollPercent={scrollPercent} decadeRefs={decadeRefs} />
+        <Timeline launches={filtered} decadeRefs={decadeRefs} />
       </main>
     </>
   );
