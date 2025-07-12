@@ -601,7 +601,7 @@
   "id": "lincoln-calibration-sphere-1",
   "name": "Lincoln Calibration Sphere 1",
   "date": "1965-05-06T00:00:00Z",
-  "organization": ["USA"],
+  "organization": ["United States"],
   "vehicle": "Atlas D",
   "launch_site": "Cape Canaveral LC-13",
   "mission_type": ["Satellite"],

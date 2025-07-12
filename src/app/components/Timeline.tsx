@@ -25,7 +25,7 @@ const organizationMap: Record<
   NASA: { color: "#2a5dbd", icon: <SiNasa /> },
   SpaceX: { color: "#2c8ed6", icon: <SiSpacex /> },
   CNSA: { color: "#f7f1e8", image: "/logos/CNSA.png" },
-  USA: { color: "rgb(66, 138, 204)", icon: <LiaFlagUsaSolid /> },
+  "United States": { color: "rgb(66, 138, 204)", icon: <LiaFlagUsaSolid /> },
   "Soviet Union": { color: "#cc3333", icon: <GiHammerSickle /> },
   "Blue Origin": { color: "#fff8e6", image: "/logos/BlueOrigin.svg" },
   ISRO: { color: "#e6eaf0", image: "/logos/ISRO.png" },
@@ -41,11 +41,9 @@ const organizationMap: Record<
   KARI: { color: "#fff4f4", image: "/logos/KARI.png" },
   SpaceIL: { color: "green", image: "/logos/SPACEIL.png" },
   UAESA: { color: "#f6f1eb", image: "/logos/UAESA.png" },
-  CNES: { color: "lightgrey", image: "/logos/CNES.png" },
-
-
-
-
+  CNES: { color: "#fff3f0", image: "/logos/CNES.png" },
+  ISAS: { color: "#f5f5f0", image: "/logos/ISAS.png" },
+  NASDA: { color: "#f8f1eb", image: "/logos/NASDA.png" },
 
 
 };
