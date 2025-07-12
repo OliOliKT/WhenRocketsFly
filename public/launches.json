@@ -1880,7 +1880,7 @@
   "mission_type": ["Satellite"],
   "launch_site": "Cape Canaveral",
   "success": true,
-  "destination": ["Geosynchronous Transfer Orbit"],
+  "destination": ["Geostationary Transfer Orbit"],
   "details": "First of the NRO’s Orion (aka Mentor) class intelligence satellites. Launched Nov 29, 1994, used for signals intelligence gathering.",
   "info_url": "https://en.wikipedia.org/wiki/Orion_(satellite)"
 },
@@ -3467,7 +3467,7 @@
   "launch_site": "Satish Dhawan Space Centre",
   "mission_type": ["Observatory"],
   "success": true,
-  "destination": ["Sun–Earth L1 point"],
+  "destination": ["Sun–Earth L1"],
   "details": "Aditya-L1 is India’s first solar observatory mission, designed to study solar dynamics from the Lagrangian point L1.",
   "info_url": "https://en.wikipedia.org/wiki/Aditya-L1"
 },
@@ -3779,7 +3779,7 @@
   "launch_site": "Kourou ELA-3",
   "mission_type": ["Observatory"],
   "success": true,
-  "destination": ["Sun-Earth L2 Point"],
+  "destination": ["Sun-Earth L2"],
   "details": "The Herschel Space Observatory observed the far-infrared and submillimeter wavelengths, helping scientists study star formation, galaxies, and the early universe.",
   "info_url": "https://en.wikipedia.org/wiki/Herschel_Space_Observatory"
 },
@@ -4047,7 +4047,7 @@
   "id": "mbr-explorer",
   "name": "MBR Explorer",
   "date": "2028-01-01T00:00:00Z",
-  "organization": ["UAE Space Agency"],
+  "organization": ["UAESA"],
   "vehicle": "Undisclosed",
   "launch_site": "Undisclosed",
   "mission_type": ["Flyby", "Asteroid Study"],

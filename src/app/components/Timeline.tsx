@@ -44,8 +44,6 @@ const organizationMap: Record<
   CNES: { color: "#fff3f0", image: "/logos/CNES.png" },
   ISAS: { color: "#f5f5f0", image: "/logos/ISAS.png" },
   NASDA: { color: "#f8f1eb", image: "/logos/NASDA.png" },
-
-
 };
 
 function formatList(value: string | string[]): string {
