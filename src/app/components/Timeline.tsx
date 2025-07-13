@@ -84,8 +84,8 @@ export default function Timeline({ launches, decadeRefs }: TimelineProps) {
 
   return (
     <div className="py-10 fade-in">
-      <VerticalTimeline>
-        {launches.map((launch) => {
+          <VerticalTimeline>
+          {launches.map((launch) => {
           const isNow = launch.id === "now";
           const isDecadeMarker = launch.id.startsWith("decade-");
           const isSpecial = isNow || isDecadeMarker;
@@ -127,6 +127,7 @@ export default function Timeline({ launches, decadeRefs }: TimelineProps) {
           return (
             <VerticalTimelineElement
               key={launch.id}
+              visible={false}
               date={new Date(launch.date).toLocaleString(undefined, {
                 year: "numeric",
                 month: "long",

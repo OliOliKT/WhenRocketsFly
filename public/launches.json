@@ -132,7 +132,7 @@
   {
     "id": "artemis-2",
     "name": "Artemis II",
-    "date": "2025-09-01T13:00:00Z",
+    "date": "2026-04-01T13:00:00Z",
     "organization": ["NASA"],
     "vehicle": "SLS Block 1",
     "mission_type": ["Flyby"],

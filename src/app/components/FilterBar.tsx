@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { HiChevronDown } from "react-icons/hi";
+import { HiChevronDown, HiAdjustments } from "react-icons/hi";
 import type { Launch } from "../types";
 
 type FilterBarProps = {
@@ -17,6 +17,7 @@ export default function FilterBar({ launches, onFilterChange }: FilterBarProps) 
   const [mission, setMission] = useState("");
   const [destination, setDestination] = useState("");
   const [organization, setOrganization] = useState("");
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const missionTypes = Array.from(
     new Set(
@@ -52,6 +53,7 @@ export default function FilterBar({ launches, onFilterChange }: FilterBarProps) 
   return (
     <div className="sticky top-0 z-30 w-full bg-gradient-to-r from-black via-slate-900 to-black backdrop-blur-sm shadow-md border-b border-slate-800 px-3 py-2">
       <div className="max-w-6xl mx-auto flex items-center justify-between gap-3">
+        {/* Logo & title */}
         <div className="flex items-center gap-2">
           <img
             src="/WhenRocketsFlyLogo.png"
@@ -68,25 +70,11 @@ export default function FilterBar({ launches, onFilterChange }: FilterBarProps) 
           </div>
         </div>
 
-        <div className="hidden sm:flex items-end gap-2 sm:gap-3">
-          <Dropdown
-            label="Mission"
-            value={mission}
-            onChange={setMission}
-            options={missionTypes}
-          />
-          <Dropdown
-            label="Destination"
-            value={destination}
-            onChange={setDestination}
-            options={destinations}
-          />
-          <Dropdown
-            label="Organization"
-            value={organization}
-            onChange={setOrganization}
-            options={organizations}
-          />
+        {/* Desktop filters */}
+        <div className="hidden sm:flex items-end gap-3">
+          <Dropdown label="Mission" value={mission} onChange={setMission} options={missionTypes} />
+          <Dropdown label="Destination" value={destination} onChange={setDestination} options={destinations} />
+          <Dropdown label="Organization" value={organization} onChange={setOrganization} options={organizations} />
           {(mission || destination || organization) && (
             <button
               onClick={resetFilters}
@@ -97,7 +85,36 @@ export default function FilterBar({ launches, onFilterChange }: FilterBarProps) 
             </button>
           )}
         </div>
+
+        {/* Mobile filter toggle */}
+        <div className="sm:hidden">
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="text-white border border-slate-600 p-1.5 rounded hover:bg-slate-800"
+            aria-label="Toggle filters"
+          >
+            <HiAdjustments className="w-5 h-5" />
+          </button>
+        </div>
       </div>
+
+      {/* Mobile filter dropdown */}
+      {mobileOpen && (
+        <div className="sm:hidden mt-3 bg-black border border-slate-700 rounded-md p-3 space-y-2">
+          <Dropdown label="Mission" value={mission} onChange={setMission} options={missionTypes} />
+          <Dropdown label="Destination" value={destination} onChange={setDestination} options={destinations} />
+          <Dropdown label="Organization" value={organization} onChange={setOrganization} options={organizations} />
+          {(mission || destination || organization) && (
+            <button
+              onClick={resetFilters}
+              className="text-xs text-slate-300 border border-slate-600 rounded px-2 py-1 hover:text-white hover:border-white transition"
+              title="Reset filters"
+            >
+              Reset
+            </button>
+          )}
+        </div>
+      )}
     </div>
   );
 }
