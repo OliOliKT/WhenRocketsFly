@@ -62,7 +62,7 @@
     "success": true,
     "destination": ["Jupiter"],
     "details": "Galileo was the first spacecraft to orbit Jupiter. It studied the planet and its moons extensively, deployed an atmospheric probe into Jupiter, and discovered evidence of subsurface oceans on Europa, Ganymede, and Callisto.",
-    "info_url": "https://en.wikipedia.org/wiki/Galileo_(spacecraft)"
+    "info_url": "https://science.nasa.gov/mission/galileo/"
   },
   {
     "id": "decade-2000s",
@@ -140,7 +140,7 @@
     "success": null,
     "destination": ["Moon"],
     "details": "First crewed Artemis mission. Will orbit the Moon without landing.",
-    "info_url": "https://en.wikipedia.org/wiki/Artemis_2"
+    "info_url": "https://www.nasa.gov/mission/artemis-ii/"
   },
   {
     "id": "tianwen-1",
@@ -244,7 +244,7 @@
   "success": true,
   "destination": ["Earth Orbit"],
   "details": "Fourth Earth satellite and first solar‑powered satellite. Used for geodetic measurements and studying upper‑atmospheric density. Although communications ceased in 1964, it remains the oldest man‑made object still in orbit.",
-  "info_url": "https://en.wikipedia.org/wiki/Vanguard_1"
+  "info_url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1958-002B"
 },
 {
   "id": "luna-1",
@@ -270,7 +270,7 @@
   "success": true,
   "destination": ["Moon / Earth orbit"],
   "details": "Pioneer 4 was the first American spacecraft to escape Earth's gravity and enter solar orbit. It conducted a flyby of the Moon at a distance of about 60,000 km, transmitting radiation data back to Earth.",
-  "info_url": "https://en.wikipedia.org/wiki/Pioneer_4"
+  "info_url": "https://science.nasa.gov/mission/pioneer-4/"
 },
 {
   "id": "vanguard-2",
@@ -400,7 +400,7 @@
   "success": true,
   "destination": ["Venus"],
   "details": "Venera 12 was part of the Soviet Venus exploration program. Its lander transmitted atmospheric data from Venus's surface, including pressure and temperature readings, although imaging systems failed.",
-  "info_url": "https://en.wikipedia.org/wiki/Venera_12"
+  "info_url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1978-086C"
 },
 {
   "id": "vostok-1",
@@ -465,7 +465,7 @@
   "success": false,
   "destination": ["Earth Orbit"],
   "details": "Ranger 1 was intended to test spacecraft systems and study cosmic rays and radiation. It failed to achieve its planned orbit due to a launch malfunction and reentered Earth's atmosphere after two days.",
-  "info_url": "https://en.wikipedia.org/wiki/Ranger_1"
+  "info_url": "https://science.nasa.gov/mission/ranger-1/"
 },
 {
   "id": "ranger-2",
@@ -478,7 +478,7 @@
   "success": false,
   "destination": ["Earth Orbit"],
   "details": "Ranger 2 was another test of systems and instruments for future lunar missions. Like its predecessor, it failed to leave Earth orbit due to a malfunction and decayed after two days.",
-  "info_url": "https://en.wikipedia.org/wiki/Ranger_2"
+  "info_url": "https://science.nasa.gov/mission/ranger-2/"
 },
 {
   "id": "ranger-3",
@@ -491,7 +491,7 @@
   "success": false,
   "destination": ["Moon"],
   "details": "Ranger 3 was intended to impact the Moon and transmit images on descent. Due to a trajectory error, it missed the Moon by over 36,000 km and entered heliocentric orbit instead.",
-  "info_url": "https://en.wikipedia.org/wiki/Ranger_3"
+  "info_url": "https://science.nasa.gov/mission/ranger-3/"
 },
 {
   "id": "ranger-4",
@@ -504,7 +504,7 @@
   "success": false,
   "destination": ["Moon"],
   "details": "Ranger 4 was the first U.S. spacecraft to reach the Moon, but it failed to return data due to an onboard computer failure. It did impact the lunar surface as intended.",
-  "info_url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1962-012A"
+  "info_url": "https://science.nasa.gov/mission/ranger-4/"
 },
 {
   "id": "ranger-5",
@@ -517,7 +517,7 @@
   "success": false,
   "destination": ["Moon"],
   "details": "Ranger 5 was designed to impact the Moon and send back scientific data, including gamma-ray and x-ray measurements. Due to a power failure, the spacecraft ceased operations prematurely and missed the Moon, entering solar orbit instead.",
-  "info_url": "https://en.wikipedia.org/wiki/Ranger_5"
+  "info_url": "https://science.nasa.gov/mission/ranger-5/"
 },
 {
   "id": "vostok-3",
@@ -582,7 +582,7 @@
   "success": true,
   "destination": ["Moon"],
   "details": "Ranger 8 transmitted over 7,000 high-resolution photographs of the Moon before impacting the lunar surface in Mare Tranquillitatis. Its images helped select the Apollo 11 landing site.",
-  "info_url": "https://en.wikipedia.org/wiki/Ranger_8"
+  "info_url": "https://science.nasa.gov/mission/ranger-8/"
 },
 {
   "id": "ranger-9",
@@ -595,7 +595,7 @@
   "success": true,
   "destination": ["Moon"],
   "details": "Ranger 9 was the final Ranger mission, transmitting more than 5,800 images of the Moon. Its impact was broadcast live on television, demonstrating the Moon's surface in real time.",
-  "info_url": "https://en.wikipedia.org/wiki/Ranger_9"
+  "info_url": "https://science.nasa.gov/mission/ranger-9/"
 },
 {
   "id": "lincoln-calibration-sphere-1",
@@ -712,7 +712,7 @@
   "success": true,
   "destination": ["Earth Orbit"],
   "details": "Gemini 3 was the first crewed Gemini flight, piloted by Gus Grissom and John Young. It tested the spacecraft’s maneuverability and introduced orbital adjustments for the first time in a U.S. mission.",
-  "info_url": "https://en.wikipedia.org/wiki/Gemini_3"
+  "info_url": "https://www.nasa.gov/mission/gemini-iii/"
 },
 {
   "id": "mariner-4",
@@ -725,7 +725,7 @@
   "success": true,
   "destination": ["Mars"],
   "details": "Mariner 4 was the first spacecraft to successfully fly by Mars and send back close-up images of another planet. It revolutionized understanding of the Martian surface and atmosphere.",
-  "info_url": "https://en.wikipedia.org/wiki/Mariner_4"
+  "info_url": "https://science.nasa.gov/mission/mariner-4/"
 },
 {
   "id": "diamant-a-asterix",
@@ -751,7 +751,7 @@
   "success": true,
   "destination": ["Earth Orbit"],
   "details": "Flown by Wally Schirra and Tom Stafford, Gemini 6A performed the first crewed rendezvous in orbit, approaching within 30 cm of Gemini 7 during a ~1-day mission.",
-  "info_url": "https://en.wikipedia.org/wiki/Gemini_6A"
+  "info_url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1965-104A"
 },
 {
   "id": "gemini-7",
@@ -764,7 +764,7 @@
   "success": true,
   "destination": ["Earth Orbit"],
   "details": "Crewed by Frank Borman and Jim Lovell, Gemini 7 spent 14 days in orbit—setting a duration record and serving as the target for Gemini 6A during the first rendezvous.",
-  "info_url": "https://en.wikipedia.org/wiki/Gemini_7"
+  "info_url": "https://www.nasa.gov/mission/gemini-vii/"
 },
 {
   "id": "luna-9",
@@ -803,7 +803,7 @@
   "success": true,
   "destination": ["Earth Orbit"],
   "details": "Uncrewed Agena‑D upper stage outfitted as a docking target for Gemini 8. Launched about 6 hours before the crewed Gemini to practice orbital rendezvous and docking—the first-ever docking of two spacecraft in orbit.",
-  "info_url": "https://en.wikipedia.org/wiki/Agena_target_vehicle"
+  "info_url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1966-019A"
 },
 {
   "id": "luna-10",
@@ -829,7 +829,7 @@
   "success": true,
   "destination": ["Moon"],
   "details": "First American spacecraft to orbit the Moon, providing crucial photographs of landing sites for Apollo and Surveyor missions, as well as the first images of Earth from lunar orbit.",
-  "info_url": "https://en.wikipedia.org/wiki/Lunar_Orbiter_1"
+  "info_url": "https://science.nasa.gov/mission/lunar-orbiter-1/"
 },
 {
   "id": "cosmos-186-188",
@@ -855,7 +855,7 @@
   "success": true,
   "destination": ["Moon"],
   "details": "First spacecraft to lift off from the Moon after a soft landing; returned nearly 30,000 images and conducted soil analysis before ending operations in December 1967.",
-  "info_url": "https://en.wikipedia.org/wiki/Surveyor_6"
+  "info_url": "https://science.nasa.gov/mission/surveyor-6/"
 },
 {
   "id": "zond-1",
@@ -894,7 +894,7 @@
   "success": false,
   "destination": ["Moon"],
   "details": "Explorer 33 was intended to go into lunar orbit, but an overburn by the launch vehicle placed it into a highly elliptical Earth orbit instead. It still provided useful space environment data.",
-  "info_url": "https://en.wikipedia.org/wiki/Explorer_33"
+  "info_url": "https://science.nasa.gov/mission/explorer-33/"
 },
 {
   "id": "lunar-orbiter-4",
@@ -907,7 +907,7 @@
   "success": true,
   "destination": ["Moon"],
   "details": "Lunar Orbiter 4 was designed to provide broad coverage of the lunar surface, including the far side. It returned over 400 high-quality photographs, helping prepare for Apollo missions.",
-  "info_url": "https://en.wikipedia.org/wiki/Lunar_Orbiter_4"
+  "info_url": "https://www.nasa.gov/mission/lunar-orbiter-4/"
 },
 {
   "id": "venera-4",
@@ -933,7 +933,7 @@
   "success": true,
   "destination": ["Venus"],
   "details": "Originally a backup for Mariner 4, Mariner 5 was repurposed for a Venus flyby. It collected vital atmospheric and surface pressure data, complementing Venera 4’s findings.",
-  "info_url": "https://en.wikipedia.org/wiki/Mariner_5"
+  "info_url": "https://science.nasa.gov/mission/mariner-5/"
 },
 {
   "id": "surveyor-4",
@@ -946,7 +946,7 @@
   "success": false,
   "destination": ["Moon"],
   "details": "Surveyor 4 was intended to land in the Moon’s Sinus Medii region. Communication was lost just before touchdown, and the mission was considered a failure.",
-  "info_url": "https://en.wikipedia.org/wiki/Surveyor_4"
+  "info_url": "https://science.nasa.gov/mission/surveyor-4/"
 },
 {
   "id": "explorer-35",
@@ -959,7 +959,7 @@
   "success": true,
   "destination": ["Moon"],
   "details": "Explorer 35 entered lunar orbit to study the Moon’s magnetic field, solar wind, and radiation environment. It provided valuable data on the space environment near the Moon.",
-  "info_url": "https://en.wikipedia.org/wiki/Explorer_35"
+  "info_url": "https://science.nasa.gov/mission/explorer-35/"
 },
 {
   "id": "hiten",
@@ -998,7 +998,7 @@
   "success": false,
   "destination": ["Mars"],
   "details": "Mars Observer was intended to study the Martian surface, atmosphere, and magnetic field. Contact was lost just before orbital insertion, making the mission a failure.",
-  "info_url": "https://en.wikipedia.org/wiki/Mars_Observer"
+  "info_url": "https://science.nasa.gov/mission/mars-observer/"
 },
 {
   "id": "clementine",
@@ -1011,7 +1011,7 @@
   "success": true,
   "destination": ["Moon"],
   "details": "Clementine mapped the lunar surface in multiple wavelengths and tested new spacecraft technologies. It provided strong evidence of water ice at the lunar poles.",
-  "info_url": "https://en.wikipedia.org/wiki/Clementine_(spacecraft)"
+  "info_url": "https://science.nasa.gov/mission/clementine/"
 },
 {
   "id": "soho",
@@ -1024,7 +1024,7 @@
   "success": true,
   "destination": ["Sun (L1 Orbit)"],
   "details": "The Solar and Heliospheric Observatory (SOHO) studies the Sun's interior, atmosphere, and solar wind. It has provided continuous data on solar activity since its launch and discovered thousands of comets.",
-  "info_url": "https://en.wikipedia.org/wiki/Solar_and_Heliospheric_Observatory"
+  "info_url": "https://science.nasa.gov/mission/soho/"
 },
 {
   "id": "mars-96",
@@ -1037,7 +1037,7 @@
   "success": false,
   "destination": ["Mars"],
   "details": "Mars 96 was a complex mission with an orbiter, landers, and penetrators. It failed to leave Earth orbit due to a fourth-stage malfunction and reentered over the Pacific Ocean shortly after launch.",
-  "info_url": "https://en.wikipedia.org/wiki/Mars_96"
+  "info_url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1996-064A"
 },
 {
   "id": "ace",
@@ -1050,7 +1050,7 @@
   "success": true,
   "destination": ["Sun (L1 Orbit)"],
   "details": "ACE measures energetic particles from the Sun, the interplanetary medium, and galactic sources. It helps monitor space weather and continues to operate at the Sun-Earth L1 point.",
-  "info_url": "https://en.wikipedia.org/wiki/Advanced_Composition_Explorer"
+  "info_url": "https://science.nasa.gov/mission/ace/"
 },
 {
   "id": "lunar-prospector",
@@ -1063,7 +1063,7 @@
   "success": true,
   "destination": ["Moon"],
   "details": "Lunar Prospector mapped the Moon’s surface composition and confirmed the presence of hydrogen at the lunar poles, indicating possible water ice. It was intentionally crashed into a crater at the end of the mission.",
-  "info_url": "https://en.wikipedia.org/wiki/Lunar_Prospector"
+  "info_url": "https://science.nasa.gov/mission/lunar-prospector/"
 },
 {
   "id": "wind",
@@ -3820,7 +3820,7 @@
   "success": true,
   "destination": ["Sun"],
   "details": "Solar Orbiter is a collaborative mission between ESA and NASA to study the Sun's poles and inner heliosphere up close.",
-  "info_url": "https://en.wikipedia.org/wiki/Solar_Orbiter"
+  "info_url": "https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter"
 },
 {
   "id": "mars-hope",
@@ -3859,7 +3859,7 @@
   "success": true,
   "destination": ["Moon"],
   "details": "CAPSTONE is a NASA mission to test and verify the stability of the lunar Near-Rectilinear Halo Orbit intended for the future Gateway space station.",
-  "info_url": "https://en.wikipedia.org/wiki/Cislunar_Autonomous_Positioning_System_Technology_Operations_and_Navigation_Experiment"
+  "info_url": "https://www.nasa.gov/mission/capstone/"
 },
 {
   "id": "danuri",
@@ -3885,7 +3885,7 @@
   "success": true,
   "destination": ["Moon"],
   "details": "First privately developed lunar lander to touch down on the Moon. Landed March 2 2025, conducted 14 days of surface operations, and captured high‑def images including a lunar sunset.",
-  "info_url": "https://en.wikipedia.org/wiki/Blue_Ghost_Mission_1"
+  "info_url": "https://fireflyspace.com/missions/blue-ghost-mission-1/"
 },
 {
   "id": "fram2",
@@ -3898,7 +3898,7 @@
   "success": true,
   "destination": ["Earth Orbit"],
   "details": "First private crewed polar orbital mission. Launched with four civilians on April 1, 2025, it conducted scientific observations over Earth's poles and landed in the Pacific on April 4.",
-  "info_url": "https://en.wikipedia.org/wiki/Fram2"
+  "info_url": "https://www.spacex.com/launches/mission/?missionId=fram2"
 },
 {
   "id": "escapade",
@@ -3911,7 +3911,7 @@
   "success": null,
   "destination": ["Mars"],
   "details": "Twin spacecraft (Blue & Gold) to study Mars’s magnetosphere and response to solar wind. Launch readiness planned for late 2025 aboard New Glenn.",
-  "info_url": "https://science.nasa.gov/blogs/escapade/"
+  "info_url": "https://science.nasa.gov/mission/escapade/"
 },
 {
   "id": "europa-clipper",
@@ -3924,7 +3924,7 @@
   "success": null,
   "destination": ["Jupiter", "Europa"],
   "details": "Will conduct multiple flybys of Europa to assess its habitability, using a powerful suite of instruments to study its ice shell, ocean, and atmosphere.",
-  "info_url": "https://en.wikipedia.org/wiki/Europa_Clipper"
+  "info_url": "https://science.nasa.gov/mission/europa-clipper/"
 },
 {
   "id": "dragonfly",
@@ -3937,7 +3937,7 @@
   "success": null,
   "destination": ["Titan"],
   "details": "A dual-quadcopter lander to explore Titan’s surface and chemistry; first powered aircraft to operate off Earth. Launch is planned for July 2028.",
-  "info_url": "https://en.wikipedia.org/wiki/Dragonfly_(space_probe)"
+  "info_url": "https://science.nasa.gov/mission/dragonfly/"
 },
 {
   "id": "juice",
@@ -3950,7 +3950,7 @@
   "success": null,
   "destination": ["Jupiter", "Ganymede", "Callisto", "Europa"],
   "details": "ESA mission to study Jupiter’s icy moons (Ganymede, Callisto, Europa). Launched April 14 2023; Ganymede orbital insertion slated for July 2031.",
-  "info_url": "https://en.wikipedia.org/wiki/Jupiter_Icy_Moons_Explorer"
+  "info_url": "https://www.esa.int/Science_Exploration/Space_Science/Juice"
 },
 {
   "id": "lucy",
@@ -3963,7 +3963,7 @@
   "success": null,
   "destination": ["Asteroid Belt", "Jupiter Trojans"],
   "details": "On a 12-year mission to fly by eight asteroids (main-belt & Jupiter Trojans). Launched October 16 2021, already encountered Dinkinesh (2023) and Donaldjohanson (2025), heading to Trojan swarm in 2027+.",
-  "info_url": "https://en.wikipedia.org/wiki/Lucy_(spacecraft)"
+  "info_url": "https://science.nasa.gov/mission/lucy/"
 },
 {
   "id": "veritas",
@@ -3976,7 +3976,7 @@
   "success": null,
   "destination": ["Venus"],
   "details": "Will map Venus’s surface with high-resolution radar and spectroscopy to understand its tectonic history, volcanic processes, and atmospheric composition. Launch targeted mid-2031.",
-  "info_url": "https://en.wikipedia.org/wiki/VERITAS_(spacecraft)"
+  "info_url": "https://science.nasa.gov/mission/veritas/"
 },
 {
   "id": "mmx",
@@ -4015,7 +4015,7 @@
   "success": null,
   "destination": ["Phaethon", "Interplanetary Space"],
   "details": "DESTINY+ is a planned JAXA mission to perform a flyby of asteroid 3200 Phaethon, a near-Earth object and the source of the Geminid meteor shower. It will also test new deep-space propulsion and communication technologies.",
-  "info_url": "https://en.wikipedia.org/wiki/DESTINY%2B"
+  "info_url": "https://www.isas.jaxa.jp/en/missions/spacecraft/developing/destiny_plus.html"
 },
 {
   "id": "rosalind-franklin",
@@ -4028,7 +4028,7 @@
   "success": null,
   "destination": ["Mars"],
   "details": "Rosalind Franklin is the ExoMars rover developed by ESA in partnership with Roscosmos. It aims to search for signs of past life on Mars and analyze subsurface samples using a powerful drill and laboratory instruments.",
-  "info_url": "https://en.wikipedia.org/wiki/Rosalind_Franklin_(rover)"
+  "info_url": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Exploration/ExoMars/ExoMars_rover"
 },
 {
   "id": "tianwen-3",
@@ -4054,7 +4054,7 @@
   "success": null,
   "destination": ["Main Asteroid Belt"],
   "details": "MBR Explorer is a planned mission by the UAE to explore seven asteroids in the main belt. It will include a close flyby of the asteroid Justitia and aims to advance scientific understanding of asteroid composition and origins.",
-  "info_url": "https://en.wikipedia.org/wiki/Emirates_Mission_to_the_Asteroid_Belt"
+  "info_url": "https://space.gov.ae/en/initiatives-and-projects/uae-mission-to-asteroid-belt-ema"
 },
 {
   "id": "venus-orbiter-mission",
@@ -4106,7 +4106,7 @@
   "success": null,
   "destination": ["Comet (TBD)"],
   "details": "Comet Interceptor is a mission to intercept a long-period comet or interstellar object. It will remain in space until a suitable target is found, at which point it will execute a high-speed flyby to gather first-time data.",
-  "info_url": "https://en.wikipedia.org/wiki/Comet_Interceptor"
+  "info_url": "https://www.esa.int/Science_Exploration/Space_Science/Comet_Interceptor"
 },
 {
   "id": "envision",
@@ -4119,7 +4119,7 @@
   "success": null,
   "destination": ["Venus"],
   "details": "EnVision is a planned ESA mission to study Venus’s atmosphere, surface, and internal structure. It will build on the legacy of missions like Venus Express and aims to better understand planetary evolution.",
-  "info_url": "https://en.wikipedia.org/wiki/EnVision"
+  "info_url": "https://www.esa.int/Science_Exploration/Space_Science/Envision/Envision_factsheet"
 },
 {
   "id": "mangalyaan-2",
@@ -4145,6 +4145,6 @@
   "success": null,
   "destination": ["Venus"],
   "details": "DAVINCI (Deep Atmosphere Venus Investigation of Noble gases, Chemistry, and Imaging) is a NASA mission that will plunge a probe into Venus’s atmosphere to analyze its composition and structure in detail.",
-  "info_url": "https://en.wikipedia.org/wiki/DAVINCI"
+  "info_url": "https://science.nasa.gov/mission/davinci/"
 }
 ]
