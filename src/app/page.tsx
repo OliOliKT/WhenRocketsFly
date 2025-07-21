@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Timeline from "@/app/components/Timeline";
 import StarfieldBackground from "@/app/components/StarFieldBackground";
+import ScrollControls from "@/app/components/ScrollControls";
 import FilterBar from "@/app/components/FilterBar";
 import LoadingScreen from "@/app/components/LoadingScreen";
 import ScrollIndicator from "@/app/components/ScrollIndicator";
@@ -14,13 +15,22 @@ export default function HomePage() {
   const [filters, setFilters] = useState({
     mission: "",
     destination: "",
-    organization: ""
+    organization: "",
+    status: "all" as "all" | "successful" | "failed"
   });
   const [scrollPercent, setScrollPercent] = useState(15);
   const [isLoading, setIsLoading] = useState(true);
 
   // Keep a ref to all decades, regardless of filters
   const decadeRefs = useRef<Record<string, HTMLDivElement | null>>({});
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+  const scrollToBottom = () =>
+    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+  const scrollToNow = () => {
+    const nowEl = decadeRefs.current["now"];
+    nowEl?.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
 
   useEffect(() => {
     fetch("/launches.json")
@@ -102,7 +112,12 @@ useEffect(() => {
       <FilterBar launches={launches} onFilterChange={setFilters} />
       <main className="max-w-4xl mx-auto px-4 text-white relative z-10">
         <ScrollIndicator scrollPercent={scrollPercent} decadeRefs={decadeRefs} />
-        <Timeline launches={filtered} decadeRefs={decadeRefs} />
+        <Timeline launches={filtered} decadeRefs={decadeRefs} statusFilter={filters.status} />
+        <ScrollControls
+          scrollToTop={scrollToTop}
+          scrollToBottom={scrollToBottom}
+          scrollToNow={scrollToNow}
+        />
       </main>
     </>
   );

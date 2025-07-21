@@ -10,6 +10,7 @@ type FilterBarProps = {
     mission: string;
     destination: string;
     organization: string;
+    status: "all" | "successful" | "failed";
   }) => void;
 };
 
@@ -17,37 +18,42 @@ export default function FilterBar({ launches, onFilterChange }: FilterBarProps) 
   const [mission, setMission] = useState("");
   const [destination, setDestination] = useState("");
   const [organization, setOrganization] = useState("");
+  const [status, setStatus] = useState<"all" | "successful" | "failed">("all");
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const missionTypes = Array.from(
     new Set(
-      launches.flatMap(l => Array.isArray(l.mission_type) ? l.mission_type : [l.mission_type])
-        .filter(Boolean)
+      launches.flatMap(l =>
+        Array.isArray(l.mission_type) ? l.mission_type : [l.mission_type]
+      ).filter(Boolean)
     )
   ).sort();
 
   const destinations = Array.from(
     new Set(
-      launches.flatMap(l => Array.isArray(l.destination) ? l.destination : [l.destination])
-        .filter(Boolean)
+      launches.flatMap(l =>
+        Array.isArray(l.destination) ? l.destination : [l.destination]
+      ).filter(Boolean)
     )
   ).sort();
 
   const organizations = Array.from(
     new Set(
-      launches.flatMap(l => Array.isArray(l.organization) ? l.organization : [l.organization])
-        .filter(Boolean)
+      launches.flatMap(l =>
+        Array.isArray(l.organization) ? l.organization : [l.organization]
+      ).filter(Boolean)
     )
   ).sort();
 
   useEffect(() => {
-    onFilterChange({ mission, destination, organization });
-  }, [mission, destination, organization]);
+    onFilterChange({ mission, destination, organization, status });
+  }, [mission, destination, organization, status]);
 
   const resetFilters = () => {
     setMission("");
     setDestination("");
     setOrganization("");
+    setStatus("all");
   };
 
   return (
@@ -72,10 +78,11 @@ export default function FilterBar({ launches, onFilterChange }: FilterBarProps) 
 
         {/* Desktop filters */}
         <div className="hidden sm:flex items-end gap-3">
+          <SegmentedControl value={status} onChange={setStatus} />
           <Dropdown label="Mission" value={mission} onChange={setMission} options={missionTypes} />
           <Dropdown label="Destination" value={destination} onChange={setDestination} options={destinations} />
           <Dropdown label="Organization" value={organization} onChange={setOrganization} options={organizations} />
-          {(mission || destination || organization) && (
+          {(mission || destination || organization || status !== "all") && (
             <button
               onClick={resetFilters}
               className="text-xs text-slate-300 border border-slate-600 rounded px-2 py-1 hover:text-white hover:border-white transition"
@@ -101,10 +108,11 @@ export default function FilterBar({ launches, onFilterChange }: FilterBarProps) 
       {/* Mobile filter dropdown */}
       {mobileOpen && (
         <div className="sm:hidden mt-3 bg-black border border-slate-700 rounded-md p-3 space-y-2">
+          <SegmentedControl value={status} onChange={setStatus} />
           <Dropdown label="Mission" value={mission} onChange={setMission} options={missionTypes} />
           <Dropdown label="Destination" value={destination} onChange={setDestination} options={destinations} />
           <Dropdown label="Organization" value={organization} onChange={setOrganization} options={organizations} />
-          {(mission || destination || organization) && (
+          {(mission || destination || organization || status !== "all") && (
             <button
               onClick={resetFilters}
               className="text-xs text-slate-300 border border-slate-600 rounded px-2 py-1 hover:text-white hover:border-white transition"
@@ -149,6 +157,43 @@ function Dropdown({
           ))}
         </select>
         <HiChevronDown className="absolute right-2 top-1/2 transform -translate-y-1/2 text-slate-400 pointer-events-none text-xs" />
+      </div>
+    </div>
+  );
+}
+
+function SegmentedControl({
+  value,
+  onChange
+}: {
+  value: "all" | "successful" | "failed";
+  onChange: (val: "all" | "successful" | "failed") => void;
+}) {
+  const options: { label: string; value: typeof value }[] = [
+    { label: "All", value: "all" },
+    { label: "Successful", value: "successful" },
+    { label: "Failed", value: "failed" }
+  ];
+
+  return (
+    <div className="flex flex-col items-start">
+      <label className="text-[11px] text-slate-300 mb-1 block tracking-widest uppercase">
+        Status
+      </label>
+      <div className="flex border border-slate-700 rounded-md overflow-hidden text-xs divide-x divide-slate-600">
+        {options.map((opt) => (
+          <button
+            key={opt.value}
+            onClick={() => onChange(opt.value)}
+            className={`px-3 py-1 transition whitespace-nowrap ${
+              value === opt.value
+                ? "bg-slate-700 text-white"
+                : "bg-slate-950 text-slate-300 hover:bg-slate-800"
+            }`}
+          >
+            {opt.label}
+          </button>
+        ))}
       </div>
     </div>
   );

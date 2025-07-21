@@ -14,14 +14,7 @@ import { SiNasa, SiSpacex } from "react-icons/si";
 import { GiHammerSickle } from "react-icons/gi";
 import { LiaFlagUsaSolid } from "react-icons/lia";
 
-const organizationMap: Record<
-  string,
-  {
-    color: string;
-    icon?: JSX.Element;
-    image?: string;
-  }
-> = {
+const organizationMap: Record<string, { color: string; icon?: JSX.Element; image?: string }> = {
   NASA: { color: "#2a5dbd", icon: <SiNasa /> },
   SpaceX: { color: "#2c8ed6", icon: <SiSpacex /> },
   CNSA: { color: "#f7f1e8", image: "/logos/CNSA.png" },
@@ -57,35 +50,50 @@ function formatList(value: string | string[]): string {
 
 type TimelineProps = {
   launches: Launch[];
+  statusFilter: "all" | "successful" | "failed";
   decadeRefs: React.MutableRefObject<Record<string, HTMLDivElement | null>>;
 };
 
-export default function Timeline({ launches, decadeRefs }: TimelineProps) {
+export default function Timeline({ launches, statusFilter, decadeRefs }: TimelineProps) {
   const nowRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     requestAnimationFrame(() => {
-      nowRef.current?.scrollIntoView({
-        behavior: "auto",
-        block: "center"
-      });
+      nowRef.current?.scrollIntoView({ behavior: "auto", block: "center" });
     });
   }, []);
 
-  if (launches.length === 0) {
+  const filteredLaunches = launches.filter((l) => {
+    if (l.id === "now" || l.id.startsWith("decade-")) return true;
+    if (statusFilter === "all") return true;
+    return statusFilter === "successful" ? l.success === true : l.success === false;
+  });
+
+  if (filteredLaunches.length === 1) {
     return (
       <div className="text-center text-slate-400 py-20 fade-in">
         <div className="text-5xl mb-4">🚫</div>
         <h2 className="text-lg font-semibold">No missions match your filter</h2>
-        <p className="text-sm mt-1">Try changing the mission type, destination, or organization.</p>
+        <p className="text-sm mt-1">Try changing the filters or status.</p>
       </div>
     );
   }
 
+  const isRegularMission = (l: Launch) =>
+  !l.id.startsWith("decade-") && l.id !== "now";
+
+  const filteredRealMissions = filteredLaunches.filter(isRegularMission);
+  const includeDecades = filteredRealMissions.length >= 12;
+
   return (
     <div className="py-10 fade-in">
-          <VerticalTimeline>
-          {launches.map((launch) => {
+      <VerticalTimeline>
+        {filteredLaunches
+          .filter((l) => {
+            const isDecade = l.id.startsWith("decade-");
+            return includeDecades || !isDecade;
+          })
+          .map((launch) => {
           const isNow = launch.id === "now";
           const isDecadeMarker = launch.id.startsWith("decade-");
           const isSpecial = isNow || isDecadeMarker;
@@ -105,11 +113,7 @@ export default function Timeline({ launches, decadeRefs }: TimelineProps) {
             <FaClock />
           ) : orgData.image ? (
             <div className="w-full h-full flex items-center justify-center">
-              <img
-                src={orgData.image}
-                alt={firstOrg}
-                className="w-[70%] h-[70%] object-contain"
-              />
+              <img src={orgData.image} alt={firstOrg} className="w-[70%] h-[70%] object-contain" />
             </div>
           ) : orgData.icon ? (
             orgData.icon
@@ -137,54 +141,59 @@ export default function Timeline({ launches, decadeRefs }: TimelineProps) {
                 hour12: false
               })}
               contentStyle={{
-                background: "#000",
-                color: "#fff",
+                background: "#070911",
+                color: "#e2e8f0",
                 border: `1px solid ${cardColor}`,
-                boxShadow: `0 0 10px ${cardColor}33`
+                borderRadius: "0.75rem",
+                padding: "1.25rem",
+                boxShadow: `0 4px 12px ${cardColor}22`
               }}
               contentArrowStyle={{ borderRight: `7px solid ${cardColor}` }}
               iconStyle={{
                 background: cardColor,
-                boxShadow: "0 0 10px rgba(255, 255, 255, 0.4)"
+                borderRadius: "50%",
+                boxShadow: "0 0 10px rgba(255, 255, 255, 0.3)"
               }}
               icon={iconNode}
             >
               <div ref={ref}>
-                <h3 className="font-bold text-xl" style={{ color: cardColor }}>
+                <h3 className="font-bold text-xl mb-1" style={{ color: cardColor }}>
                   {launch.name}
                 </h3>
 
                 {!isSpecial && (
                   <>
-                    <h4 className="text-sm text-white mb-1">
+                    <h4
+                      className="text-sm font-medium mb-2"
+                      style={{ color: cardColor, textShadow: `0 0 2px ${cardColor}` }}
+                    >
                       {formatList(launch.organization)}
                     </h4>
-                    <p>
-                      <span style={{ color: cardColor }}>🚀 Vehicle:</span> {launch.vehicle}
+                    <p className="mb-1">
+                      <span className="text-slate-400">🚀 Vehicle:</span> {launch.vehicle}
                     </p>
-                    <p>
-                      <span style={{ color: cardColor }}>🛰 Mission:</span>{" "}
-                      {formatList(launch.mission_type)}
+                    <p className="mb-1">
+                      <span className="text-slate-400">🛰 Mission:</span> {formatList(launch.mission_type)}
                     </p>
-                    <p>
-                      <span style={{ color: cardColor }}>🌍 Destination:</span>{" "}
-                      {formatList(launch.destination)}
+                    <p className="mb-1">
+                      <span className="text-slate-400">🌍 Destination:</span> {formatList(launch.destination)}
                     </p>
-                    <p>
-                      <span style={{ color: cardColor }}>📍 Site:</span> {launch.launch_site}
+                    <p className="mb-2">
+                      <span className="text-slate-400">📍 Site:</span> {launch.launch_site}
                     </p>
+                    <hr className="my-3 border-slate-700" />
                   </>
                 )}
 
-                <p className="mt-2 text-gray-300">{launch.details}</p>
+                <p className="text-slate-400 leading-relaxed">{launch.details}</p>
                 {launch.info_url && (
                   <a
                     href={launch.info_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-blue-300 hover:underline mt-2 inline-block transition"
+                    className="inline-block mt-3 text-sm text-blue-400 hover:text-white hover:underline transition"
                   >
-                    <span style={{ color: cardColor }}>Learn more</span>
+                    🔗 Learn more
                   </a>
                 )}
               </div>

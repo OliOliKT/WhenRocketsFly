@@ -175,7 +175,7 @@
     "organization": ["Firefly Aerospace"],
     "vehicle": "Blue Ghost Lander",
     "launch_site": "Cape Canaveral",
-    "mission_type": ["Lander", "Science"],
+    "mission_type": ["Lander"],
     "success": null,
     "destination": ["Moon"],
     "details": "Chimera-1 is a lunar lander mission developed by Firefly Aerospace under NASA’s CLPS program, intended to carry various science experiments to the lunar surface.",
@@ -1297,7 +1297,7 @@
   "success": false,
   "destination": ["Mars"],
   "details": "Nozomi was Japan's first Mars mission, intended to study the Martian atmosphere and magnetic field. It suffered electrical failures and missed orbital insertion, ultimately being abandoned.",
-  "info_url": "https://en.wikipedia.org/wiki/Nozomi_(spacecraft)"
+  "info_url": "https://www.isas.jaxa.jp/en/missions/spacecraft/past/nozomi.html"
 },
 {
   "id": "deep-space-1",
@@ -1310,7 +1310,7 @@
   "success": true,
   "destination": ["Asteroid Belt", "Comet Borrelly"],
   "details": "Deep Space 1 tested advanced technologies including ion propulsion. It successfully flew by asteroid 9969 Braille and later Comet Borrelly, returning valuable data from both encounters.",
-  "info_url": "https://en.wikipedia.org/wiki/Deep_Space_1"
+  "info_url": "https://science.nasa.gov/mission/deep-space-1/"
 },
 {
   "id": "iss",
@@ -1323,7 +1323,7 @@
   "success": true,
   "destination": ["Low Earth Orbit"],
   "details": "The ISS is a multinational space station that serves as a microgravity laboratory, observatory, and factory in low Earth orbit. Construction began in 1998 and continues with ongoing international cooperation.",
-  "info_url": "https://en.wikipedia.org/wiki/International_Space_Station"
+  "info_url": "https://www.nasa.gov/international-space-station/"
 },
 {
   "id": "mars-climate-orbiter",
@@ -1336,7 +1336,7 @@
   "success": false,
   "destination": ["Mars"],
   "details": "Mars Climate Orbiter was designed to study Martian weather and serve as a communications relay. It was lost due to a unit conversion error, causing it to enter the atmosphere at the wrong altitude.",
-  "info_url": "https://en.wikipedia.org/wiki/Mars_Climate_Orbiter"
+  "info_url": "https://science.nasa.gov/mission/mars-climate-orbiter/"
 },
 {
   "id": "zond-2",
@@ -1388,7 +1388,7 @@
 "success": true,
 "destination": ["Mars"],
 "details": "Mariner 6 performed a successful flyby of Mars, returning images and data on the planet’s atmosphere and surface.",
-"info_url": "https://en.wikipedia.org/wiki/Mariner_6_and_7"
+"info_url": "https://science.nasa.gov/mission/mariner-6/"
 },
 {
 "id": "apollo-9",
@@ -1401,7 +1401,7 @@
 "success": true,
 "destination": ["Earth Orbit"],
 "details": "Apollo 9 tested the Lunar Module in Earth orbit, including docking, undocking, and crew transfer procedures.",
-"info_url": "https://en.wikipedia.org/wiki/Apollo_9"
+"info_url": "https://www.nasa.gov/mission/apollo-9/"
 },
 {
 "id": "mariner-7",
@@ -1440,7 +1440,7 @@
   "success": true,
   "destination": ["Moon"],
   "details": "First crewed spacecraft to leave Earth orbit and circle the Moon. Carried Borman, Lovell & Anders; orbited the Moon 10 times and captured the iconic Earthrise image.",
-  "info_url": "https://en.wikipedia.org/wiki/Apollo_8"
+  "info_url": "https://www.nasa.gov/mission/apollo-8/"
 },
 {
   "id": "luna-5",
@@ -3337,7 +3337,7 @@
   "mission_type": ["Space Observatory"],
   "launch_site": "Guiana Space Centre",
   "success": true,
-  "destination": ["Sun–Earth L2"],
+  "destination": ["Sun-Earth L2"],
   "details": "The most powerful space telescope ever built, JWST observes in infrared to study the early universe, star and planet formation, and distant exoplanets.",
   "info_url": "https://jwst.nasa.gov"
 },
@@ -3467,7 +3467,7 @@
   "launch_site": "Satish Dhawan Space Centre",
   "mission_type": ["Observatory"],
   "success": true,
-  "destination": ["Sun–Earth L1"],
+  "destination": ["Sun-Earth L1"],
   "details": "Aditya-L1 is India’s first solar observatory mission, designed to study solar dynamics from the Lagrangian point L1.",
   "info_url": "https://en.wikipedia.org/wiki/Aditya-L1"
 },
