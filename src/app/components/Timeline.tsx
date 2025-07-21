@@ -191,7 +191,8 @@ export default function Timeline({ launches, statusFilter, decadeRefs }: Timelin
                     href={launch.info_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block mt-3 text-sm text-blue-400 hover:text-white hover:underline transition"
+                    style={{ color: cardColor }}
+                    className="inline-block mt-3 text-sm hover:text-white hover:underline transition"
                   >
                     🔗 Learn more
                   </a>
