@@ -1544,20 +1544,7 @@
   "success": true,
   "destination": ["Moon"],
   "details": "The first crewed Moon landing in history. Astronauts Neil Armstrong and Buzz Aldrin walked on the lunar surface while Michael Collins remained in lunar orbit. Armstrong’s words 'That's one small step for [a] man, one giant leap for mankind' became iconic.",
-  "info_url": "https://en.wikipedia.org/wiki/Apollo_11"
-},
-{
-  "id": "apollo-12-surveyor-3",
-  "name": "Apollo 12 / Surveyor 3",
-  "date": "1969-11-14T16:22:00Z",
-  "organization": ["NASA"],
-  "vehicle": "Saturn V SA‑507 / Surveyor 3",
-  "mission_type": ["Crewed Landing"],
-  "launch_site": "Kennedy Space Center LC‑39A",
-  "success": true,
-  "destination": ["Moon"],
-  "details": "Apollo 12 astronauts landed within walking distance of Surveyor 3 (landed April 1967), retrieved its camera and parts on Nov 19 1969. This marked the first time humans interacted with prior robotic mission hardware on the Moon.",
-  "info_url": "https://en.wikipedia.org/wiki/Apollo_12"
+  "info_url": "https://www.nasa.gov/mission/apollo-11/"
 },
   {
     "id": "luna-15",
@@ -1596,7 +1583,7 @@
     "success": true,
     "destination": ["Moon"],
     "details": "Apollo 12 was the second crewed mission to land on the Moon. The crew performed two moonwalks and visited the Surveyor 3 probe.",
-    "info_url": "https://en.wikipedia.org/wiki/Apollo_12"
+    "info_url": "https://www.nasa.gov/mission/apollo-12/"
   },
 {
   "id": "luna-12",
@@ -1622,7 +1609,7 @@
   "success": true,
   "destination": ["Moon"],
   "details": "Lunar Orbiter 2 captured detailed images of the Moon’s surface to identify potential Apollo landing sites. It famously photographed the Copernicus crater.",
-  "info_url": "https://en.wikipedia.org/wiki/Lunar_Orbiter_2"
+  "info_url": "https://science.nasa.gov/mission/lunar-orbiter-2/"
 },
 {
   "id": "luna-13",
@@ -1648,7 +1635,7 @@
   "success": true,
   "destination": ["Moon"],
   "details": "Lunar Orbiter 3 returned high-quality photos of potential Apollo landing sites and important topographical features. It also tested spacecraft tracking systems.",
-  "info_url": "https://en.wikipedia.org/wiki/Lunar_Orbiter_3"
+  "info_url": "https://science.nasa.gov/mission/lunar-orbiter-3/"
 },
 {
   "id": "surveyor-3",
@@ -1661,7 +1648,7 @@
   "success": true,
   "destination": ["Moon"],
   "details": "Surveyor 3 landed on the Moon and conducted experiments on soil mechanics and surface conditions. Parts of it were famously retrieved by Apollo 12 astronauts in 1969.",
-  "info_url": "https://en.wikipedia.org/wiki/Surveyor_3"
+  "info_url": "https://science.nasa.gov/mission/surveyor-3/"
 },
 {
   "id": "venera-2",
@@ -1700,7 +1687,7 @@
   "success": true,
   "destination": ["Sun"],
   "details": "Pioneer 6 was the first of four identical spacecraft designed to study solar wind, cosmic rays, and solar magnetic fields in interplanetary space. It remained operational for decades.",
-  "info_url": "https://en.wikipedia.org/wiki/Pioneer_6"
+  "info_url": "https://science.nasa.gov/mission/pioneer-6/"
 },
 {
   "id": "surveyor-1",
