@@ -49,12 +49,20 @@ export default function ScrollIndicator({
     }
   };
 
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+  const scrollToBottom = () =>
+    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+
   return (
     <div className="fixed left-4 top-20 bottom-5 z-20 hidden md:flex flex-col items-center text-gray-400 font-mono">
-      <div className="flex flex-col items-center gap-1 mb-2">
-        <HiArrowUp className="w-5 h-5" />
-        <span className="text-xs">Future</span>
-      </div>
+      <button
+        onClick={scrollToTop}
+        className="group flex flex-col items-center gap-1 mb-2 cursor-pointer"
+        title="Scroll to top"
+      >
+        <HiArrowUp className="w-5 h-5 group-hover:text-blue-400 transition" />
+        <span className="text-xs group-hover:text-blue-400 transition">Future</span>
+      </button>
 
       <div className="w-px flex-1 bg-gray-600 relative">
         {positions.map(({ id, label, top }) => (
@@ -81,10 +89,14 @@ export default function ScrollIndicator({
         />
       </div>
 
-      <div className="mt-2 flex flex-col items-center gap-1">
-        <HiArrowDown className="w-5 h-5" />
-        <span className="text-xs">Past</span>
-      </div>
+      <button
+        onClick={scrollToBottom}
+        className="group mt-2 flex flex-col items-center gap-1 cursor-pointer"
+        title="Scroll to bottom"
+      >
+        <HiArrowDown className="w-5 h-5 group-hover:text-blue-400 transition" />
+        <span className="text-xs group-hover:text-blue-400 transition">Past</span>
+      </button>
     </div>
   );
 }

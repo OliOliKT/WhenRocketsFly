@@ -24,8 +24,12 @@ function StarfieldBackgroundComponent() {
             resize: true
           },
           modes: {
-            push: { quantity: 4 },
-            repulse: { distance: 100, duration: 0.4 }
+            push: { quantity: 5 },
+            repulse: {
+              distance: 120,
+              duration: 0.5,
+              easing: "ease-out-quad"
+            }
           }
         },
         particles: {
@@ -36,19 +40,22 @@ function StarfieldBackgroundComponent() {
           color: { value: "#ffffff" },
           shape: { type: "circle" },
           opacity: {
-            value: 1,
+            value: 0.9,
             random: true,
             anim: {
               enable: true,
-              speed: 0.5,
-              opacity_min: 0.1,
+              speed: 0.7,
+              opacity_min: 0.2,
               sync: false
             }
           },
-          size: { value: 2, random: true },
+          size: {
+            value: { min: 0.5, max: 2.5 },
+            random: true
+          },
           move: {
             enable: true,
-            speed: 0.2,
+            speed: 0.3,
             direction: "none",
             random: true,
             straight: false,
@@ -58,8 +65,8 @@ function StarfieldBackgroundComponent() {
           twinkle: {
             particles: {
               enable: true,
-              frequency: 0.01,
-              opacity: 1
+              frequency: 0.03,
+              opacity: 0.8
             }
           }
         },
@@ -69,6 +76,5 @@ function StarfieldBackgroundComponent() {
   );
 }
 
-// 🧠 Memoized version to prevent re-renders on scroll
 const StarfieldBackground = memo(StarfieldBackgroundComponent);
 export default StarfieldBackground;
