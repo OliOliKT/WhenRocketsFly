@@ -1,6 +1,6 @@
 "use client";
 
-import { JSX, useEffect, useRef } from "react";
+import { JSX, useEffect, useMemo, useRef } from "react";
 import type { Launch } from "../types";
 import {
   VerticalTimeline,
@@ -63,11 +63,15 @@ export default function Timeline({ launches, statusFilter, decadeRefs }: Timelin
     });
   }, []);
 
-  const filteredLaunches = launches.filter((l) => {
-    if (l.id === "now" || l.id.startsWith("decade-")) return true;
-    if (statusFilter === "all") return true;
-    return statusFilter === "successful" ? l.success === true : l.success === false;
-  });
+  const filteredLaunches = useMemo(
+    () =>
+      launches.filter((l) => {
+        if (l.id === "now" || l.id.startsWith("decade-")) return true;
+        if (statusFilter === "all") return true;
+        return statusFilter === "successful" ? l.success === true : l.success === false;
+      }),
+    [launches, statusFilter]
+  );
 
   if (filteredLaunches.length === 1) {
     return (
@@ -80,7 +84,7 @@ export default function Timeline({ launches, statusFilter, decadeRefs }: Timelin
   }
 
   const isRegularMission = (l: Launch) =>
-  !l.id.startsWith("decade-") && l.id !== "now";
+    !l.id.startsWith("decade-") && l.id !== "now";
 
   const filteredRealMissions = filteredLaunches.filter(isRegularMission);
   const includeDecades = filteredRealMissions.length >= 12;
@@ -113,7 +117,13 @@ export default function Timeline({ launches, statusFilter, decadeRefs }: Timelin
             <FaClock />
           ) : orgData.image ? (
             <div className="w-full h-full flex items-center justify-center">
-              <img src={orgData.image} alt={firstOrg} className="w-[70%] h-[70%] object-contain" />
+              <img
+                src={orgData.image}
+                alt={firstOrg}
+                className="w-[70%] h-[70%] object-contain"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           ) : orgData.icon ? (
             orgData.icon

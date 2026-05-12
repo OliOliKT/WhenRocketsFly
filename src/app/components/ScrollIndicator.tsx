@@ -6,11 +6,13 @@ import { HiArrowUp, HiArrowDown } from "react-icons/hi";
 type ScrollIndicatorProps = {
   scrollPercent: number;
   decadeRefs: React.MutableRefObject<Record<string, HTMLDivElement | null>>;
+  markerKey: string;
 };
 
 export default function ScrollIndicator({
   scrollPercent,
-  decadeRefs
+  decadeRefs,
+  markerKey
 }: ScrollIndicatorProps) {
   const [positions, setPositions] = useState<
     { id: string; label: string; top: number }[]
@@ -33,14 +35,12 @@ export default function ScrollIndicator({
       setPositions(newPositions);
     };
 
-    updatePositions();
+    requestAnimationFrame(updatePositions);
     window.addEventListener("resize", updatePositions);
-    window.addEventListener("scroll", updatePositions, { passive: true });
     return () => {
       window.removeEventListener("resize", updatePositions);
-      window.removeEventListener("scroll", updatePositions);
     };
-  }, [decadeRefs]);
+  }, [decadeRefs, markerKey]);
 
   const scrollTo = (id: string) => {
     const target = decadeRefs.current[id];

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Timeline from "@/app/components/Timeline";
 import StarfieldBackground from "@/app/components/StarFieldBackground";
 import ScrollControls from "@/app/components/ScrollControls";
@@ -11,7 +11,6 @@ import type { Launch } from "../app/types";
 
 export default function HomePage() {
   const [launches, setLaunches] = useState<Launch[]>([]);
-  const [filtered, setFiltered] = useState<Launch[]>([]);
   const [filters, setFilters] = useState({
     mission: "",
     destination: "",
@@ -33,7 +32,9 @@ export default function HomePage() {
   };
 
   useEffect(() => {
-    fetch("/launches.json")
+    const controller = new AbortController();
+
+    fetch("/launches.json", { signal: controller.signal })
       .then(res => res.json())
       .then(data => {
         const now = new Date().toISOString();
@@ -54,54 +55,81 @@ export default function HomePage() {
           (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
         );
         setLaunches(combined);
-        setFiltered(combined);
-        setTimeout(() => setIsLoading(false), 1500);
+        setIsLoading(false);
+      })
+      .catch(error => {
+        if (error.name !== "AbortError") {
+          console.error("Failed to load launches", error);
+          setIsLoading(false);
+        }
       });
+
+    return () => controller.abort();
   }, []);
 
-useEffect(() => {
-  const matchesFilter = (value: string | string[], selected: string) => {
-    if (!selected) return true;
-    if (Array.isArray(value)) return value.includes(selected);
-    return value === selected;
-  };
+  const filtered = useMemo(() => {
+    const matchesFilter = (value: string | string[], selected: string) => {
+      if (!selected) return true;
+      if (Array.isArray(value)) return value.includes(selected);
+      return value === selected;
+    };
 
-  const filteredMissions = launches.filter(
-    (l) =>
-      !l.id.startsWith("decade-") &&
-      l.id !== "now" &&
-      matchesFilter(l.mission_type, filters.mission) &&
-      matchesFilter(l.destination, filters.destination) &&
-      matchesFilter(l.organization, filters.organization)
-  );
-
-  const includeDecades = filteredMissions.length >= 8;
-
-  const finalFiltered = launches.filter((l) => {
-    const isNow = l.id === "now";
-    const isDecade = l.id.startsWith("decade-");
-    return (
-      isNow ||
-      (includeDecades && isDecade) ||
-      (!isDecade && !isNow &&
+    const filteredMissions = launches.filter(
+      (l) =>
+        !l.id.startsWith("decade-") &&
+        l.id !== "now" &&
         matchesFilter(l.mission_type, filters.mission) &&
         matchesFilter(l.destination, filters.destination) &&
-        matchesFilter(l.organization, filters.organization))
+        matchesFilter(l.organization, filters.organization)
     );
-  });
 
-  setFiltered(finalFiltered);
-}, [filters, launches]);
+    const includeDecades = filteredMissions.length >= 8;
+
+    return launches.filter((l) => {
+      const isNow = l.id === "now";
+      const isDecade = l.id.startsWith("decade-");
+      return (
+        isNow ||
+        (includeDecades && isDecade) ||
+        (!isDecade && !isNow &&
+          matchesFilter(l.mission_type, filters.mission) &&
+          matchesFilter(l.destination, filters.destination) &&
+          matchesFilter(l.organization, filters.organization))
+      );
+    });
+  }, [filters, launches]);
+
+  const timelineMarkerKey = useMemo(
+    () =>
+      filtered
+        .filter((launch) => launch.id === "now" || launch.id.startsWith("decade-"))
+        .map((launch) => launch.id)
+        .join("|"),
+    [filtered]
+  );
 
   useEffect(() => {
+    let frameId: number | null = null;
+
     const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const scrollHeight = document.body.scrollHeight - window.innerHeight;
-      const percentage = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
-      setScrollPercent(percentage);
+      if (frameId !== null) return;
+
+      frameId = requestAnimationFrame(() => {
+        const scrollTop = window.scrollY;
+        const scrollHeight = document.body.scrollHeight - window.innerHeight;
+        const percentage = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+        setScrollPercent(percentage);
+        frameId = null;
+      });
     };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (frameId !== null) cancelAnimationFrame(frameId);
+    };
   }, []);
 
   if (isLoading) return <LoadingScreen />;
@@ -111,7 +139,11 @@ useEffect(() => {
       <StarfieldBackground />
       <FilterBar launches={launches} onFilterChange={setFilters} />
       <main className="max-w-4xl mx-auto px-4 text-white relative z-10">
-        <ScrollIndicator scrollPercent={scrollPercent} decadeRefs={decadeRefs} />
+        <ScrollIndicator
+          scrollPercent={scrollPercent}
+          decadeRefs={decadeRefs}
+          markerKey={timelineMarkerKey}
+        />
         <Timeline launches={filtered} decadeRefs={decadeRefs} statusFilter={filters.status} />
         <ScrollControls
           scrollToTop={scrollToTop}

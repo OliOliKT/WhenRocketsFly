@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { HiChevronDown, HiAdjustments } from "react-icons/hi";
 import type { Launch } from "../types";
 
@@ -21,33 +21,45 @@ export default function FilterBar({ launches, onFilterChange }: FilterBarProps) 
   const [status, setStatus] = useState<"all" | "successful" | "failed">("all");
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const missionTypes = Array.from(
-    new Set(
-      launches.flatMap(l =>
-        Array.isArray(l.mission_type) ? l.mission_type : [l.mission_type]
-      ).filter(Boolean)
-    )
-  ).sort();
+  const missionTypes = useMemo(
+    () =>
+      Array.from(
+        new Set(
+          launches.flatMap(l =>
+            Array.isArray(l.mission_type) ? l.mission_type : [l.mission_type]
+          ).filter(Boolean)
+        )
+      ).sort(),
+    [launches]
+  );
 
-  const destinations = Array.from(
-    new Set(
-      launches.flatMap(l =>
-        Array.isArray(l.destination) ? l.destination : [l.destination]
-      ).filter(Boolean)
-    )
-  ).sort();
+  const destinations = useMemo(
+    () =>
+      Array.from(
+        new Set(
+          launches.flatMap(l =>
+            Array.isArray(l.destination) ? l.destination : [l.destination]
+          ).filter(Boolean)
+        )
+      ).sort(),
+    [launches]
+  );
 
-  const organizations = Array.from(
-    new Set(
-      launches.flatMap(l =>
-        Array.isArray(l.organization) ? l.organization : [l.organization]
-      ).filter(Boolean)
-    )
-  ).sort();
+  const organizations = useMemo(
+    () =>
+      Array.from(
+        new Set(
+          launches.flatMap(l =>
+            Array.isArray(l.organization) ? l.organization : [l.organization]
+          ).filter(Boolean)
+        )
+      ).sort(),
+    [launches]
+  );
 
   useEffect(() => {
     onFilterChange({ mission, destination, organization, status });
-  }, [mission, destination, organization, status]);
+  }, [mission, destination, organization, status, onFilterChange]);
 
   const resetFilters = () => {
     setMission("");
@@ -65,6 +77,7 @@ export default function FilterBar({ launches, onFilterChange }: FilterBarProps) 
             src="/WhenRocketsFlyLogo.png"
             alt="When Rockets Fly logo"
             className="h-8 w-8 sm:h-10 sm:w-10 object-contain"
+            decoding="async"
           />
           <div>
             <h1 className="text-base sm:text-lg font-semibold text-white leading-tight">
