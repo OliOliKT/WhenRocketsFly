@@ -40,6 +40,7 @@ export default function HomeExperience({ initialLaunches, nowIso }: HomeExperien
   }, [initialLaunches, nowIso]);
 
   const [filters, setFilters] = useState({
+    search: "",
     mission: "",
     destination: "",
     organization: "",
@@ -69,10 +70,35 @@ export default function HomeExperience({ initialLaunches, nowIso }: HomeExperien
       return values.some((item) => normalize(item) === selected);
     };
 
+    const searchQuery = filters.search.trim().toLowerCase();
+    const matchesSearch = (launch: Launch) => {
+      if (!searchQuery) return true;
+
+      const searchableText = [
+        launch.name,
+        launch.vehicle,
+        launch.launch_site,
+        launch.details,
+        launch.info_url,
+        ...launch.organization,
+        ...launch.organization.map(normalizeOrganization),
+        ...launch.destination,
+        ...launch.destination.map(normalizeDestination),
+        ...launch.mission_type,
+        ...launch.mission_type.map(normalizeMissionType)
+      ]
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase();
+
+      return searchableText.includes(searchQuery);
+    };
+
     const filteredMissions = launches.filter(
       (l) =>
         !l.id.startsWith("decade-") &&
         l.id !== "now" &&
+        matchesSearch(l) &&
         matchesFilter(l.mission_type, filters.mission, normalizeMissionType) &&
         matchesFilter(l.destination, filters.destination, normalizeDestination) &&
         matchesFilter(l.organization, filters.organization, normalizeOrganization)
@@ -87,6 +113,7 @@ export default function HomeExperience({ initialLaunches, nowIso }: HomeExperien
         isNow ||
         (includeDecades && isDecade) ||
         (!isDecade && !isNow &&
+          matchesSearch(l) &&
           matchesFilter(l.mission_type, filters.mission, normalizeMissionType) &&
           matchesFilter(l.destination, filters.destination, normalizeDestination) &&
           matchesFilter(l.organization, filters.organization, normalizeOrganization))

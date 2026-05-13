@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { HiChevronDown, HiAdjustments } from "react-icons/hi";
+import { HiChevronDown, HiAdjustments, HiSearch } from "react-icons/hi";
 import type { Launch } from "../types";
 import {
   normalizeDestination,
@@ -12,6 +12,7 @@ import {
 type FilterBarProps = {
   launches: Launch[];
   onFilterChange: (filters: {
+    search: string;
     mission: string;
     destination: string;
     organization: string;
@@ -20,6 +21,7 @@ type FilterBarProps = {
 };
 
 export default function FilterBar({ launches, onFilterChange }: FilterBarProps) {
+  const [search, setSearch] = useState("");
   const [mission, setMission] = useState("");
   const [destination, setDestination] = useState("");
   const [organization, setOrganization] = useState("");
@@ -63,15 +65,18 @@ export default function FilterBar({ launches, onFilterChange }: FilterBarProps) 
   );
 
   useEffect(() => {
-    onFilterChange({ mission, destination, organization, status });
-  }, [mission, destination, organization, status, onFilterChange]);
+    onFilterChange({ search, mission, destination, organization, status });
+  }, [search, mission, destination, organization, status, onFilterChange]);
 
   const resetFilters = () => {
+    setSearch("");
     setMission("");
     setDestination("");
     setOrganization("");
     setStatus("all");
   };
+
+  const hasActiveFilters = search || mission || destination || organization || status !== "all";
 
   return (
     <div className="sticky top-0 z-30 w-full bg-gradient-to-r from-black via-slate-900 to-black backdrop-blur-sm shadow-md border-b border-slate-800 px-3 py-2">
@@ -96,11 +101,12 @@ export default function FilterBar({ launches, onFilterChange }: FilterBarProps) 
 
         {/* Desktop filters */}
         <div className="hidden sm:flex items-end gap-3">
+          <SearchField value={search} onChange={setSearch} />
           <SegmentedControl value={status} onChange={setStatus} />
           <Dropdown label="Mission" value={mission} onChange={setMission} options={missionTypes} />
           <Dropdown label="Destination" value={destination} onChange={setDestination} options={destinations} />
           <Dropdown label="Organization" value={organization} onChange={setOrganization} options={organizations} />
-          {(mission || destination || organization || status !== "all") && (
+          {hasActiveFilters && (
             <button
               onClick={resetFilters}
               className="text-xs text-slate-300 border border-slate-600 rounded px-2 py-1 hover:text-white hover:border-white transition"
@@ -126,11 +132,12 @@ export default function FilterBar({ launches, onFilterChange }: FilterBarProps) 
       {/* Mobile filter dropdown */}
       {mobileOpen && (
         <div className="sm:hidden mt-3 bg-black border border-slate-700 rounded-md p-3 space-y-2">
+          <SearchField value={search} onChange={setSearch} />
           <SegmentedControl value={status} onChange={setStatus} />
           <Dropdown label="Mission" value={mission} onChange={setMission} options={missionTypes} />
           <Dropdown label="Destination" value={destination} onChange={setDestination} options={destinations} />
           <Dropdown label="Organization" value={organization} onChange={setOrganization} options={organizations} />
-          {(mission || destination || organization || status !== "all") && (
+          {hasActiveFilters && (
             <button
               onClick={resetFilters}
               className="text-xs text-slate-300 border border-slate-600 rounded px-2 py-1 hover:text-white hover:border-white transition"
@@ -141,6 +148,32 @@ export default function FilterBar({ launches, onFilterChange }: FilterBarProps) 
           )}
         </div>
       )}
+    </div>
+  );
+}
+
+function SearchField({
+  value,
+  onChange
+}: {
+  value: string;
+  onChange: (val: string) => void;
+}) {
+  return (
+    <div className="w-full sm:w-52">
+      <label className="text-[11px] text-slate-300 mb-1 block tracking-widest uppercase">
+        Search
+      </label>
+      <div className="relative">
+        <HiSearch className="absolute left-2 top-1/2 -translate-y-1/2 text-slate-400 text-sm pointer-events-none" />
+        <input
+          type="search"
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          placeholder="Apollo, Mars, SpaceX..."
+          className="h-[26px] bg-slate-950 text-white pl-7 pr-3 rounded-md w-full border border-slate-700 focus:outline-none focus:ring-1 focus:ring-indigo-500 text-xs placeholder:text-slate-500"
+        />
+      </div>
     </div>
   );
 }
