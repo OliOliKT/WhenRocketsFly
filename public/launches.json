@@ -223,6 +223,26 @@
     "info_url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1960-002A"
   },
   {
+    "id": "tiros-1",
+    "name": "TIROS-1",
+    "date": "1960-04-01T11:40:09Z",
+    "organization": [
+      "NASA"
+    ],
+    "vehicle": "Thor-Able II",
+    "mission_type": [
+      "Earth Observation",
+      "Technology Demonstration"
+    ],
+    "launch_site": "Cape Canaveral LC-17A",
+    "success": true,
+    "destination": [
+      "Earth Orbit"
+    ],
+    "details": "First successful weather satellite. TIROS-1 demonstrated that satellites could return useful cloud-cover imagery for weather forecasting and opened the era of operational meteorology from space.",
+    "info_url": "https://science.nasa.gov/mission/tiros/"
+  },
+  {
     "id": "sputnik-5",
     "name": "Sputnik 5",
     "date": "1960-08-19T08:44:00Z",
@@ -337,6 +357,26 @@
     "info_url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1961-012B"
   },
   {
+    "id": "liberty-bell-7",
+    "name": "Mercury-Redstone 4 (Liberty Bell 7)",
+    "date": "1961-07-21T12:20:36Z",
+    "organization": [
+      "NASA"
+    ],
+    "vehicle": "Mercury-Redstone",
+    "mission_type": [
+      "Crewed Flight",
+      "Suborbital Flight"
+    ],
+    "launch_site": "Cape Canaveral LC-5",
+    "success": true,
+    "destination": [
+      "Suborbital"
+    ],
+    "details": "Second crewed U.S. spaceflight, carrying Gus Grissom on a 15-minute suborbital mission. The capsule sank after splashdown when its hatch opened, but the flight advanced Mercury operations.",
+    "info_url": "https://www.nasa.gov/mission/mercury-redstone-4-liberty-bell-7/"
+  },
+  {
     "id": "vostok-2",
     "name": "Vostok 2",
     "date": "1961-08-06T06:00:00Z",
@@ -413,6 +453,25 @@
     "info_url": "https://science.nasa.gov/mission/ranger-3/"
   },
   {
+    "id": "friendship-7",
+    "name": "Mercury-Atlas 6 (Friendship 7)",
+    "date": "1962-02-20T14:47:39Z",
+    "organization": [
+      "NASA"
+    ],
+    "vehicle": "Atlas LV-3B",
+    "mission_type": [
+      "Crewed Flight"
+    ],
+    "launch_site": "Cape Canaveral LC-14",
+    "success": true,
+    "destination": [
+      "Earth Orbit"
+    ],
+    "details": "John Glenn became the first American to orbit Earth, completing three orbits in nearly five hours. The mission proved the United States could conduct crewed orbital flight.",
+    "info_url": "https://www.nasa.gov/image-feature/liftoff-of-john-glenns-friendship-7-feb-20-1962"
+  },
+  {
     "id": "oso-1",
     "name": "OSO-1",
     "date": "1962-03-07T11:04:00Z",
@@ -449,6 +508,26 @@
     ],
     "details": "Ranger 4 was the first U.S. spacecraft to reach the Moon, but it failed to return data due to an onboard computer failure. It did impact the lunar surface as intended.",
     "info_url": "https://science.nasa.gov/mission/ranger-4/"
+  },
+  {
+    "id": "telstar-1",
+    "name": "Telstar 1",
+    "date": "1962-07-10T07:35:00Z",
+    "organization": [
+      "NASA",
+      "AT&T"
+    ],
+    "vehicle": "Delta",
+    "mission_type": [
+      "Communications Satellite"
+    ],
+    "launch_site": "Cape Canaveral LC-17B",
+    "success": true,
+    "destination": [
+      "Earth Orbit"
+    ],
+    "details": "First privately sponsored active communications satellite and the spacecraft that enabled the first live transatlantic television relays between North America and Europe.",
+    "info_url": "https://www.nasa.gov/history/telstar-opened-era-of-global-satellite-television/"
   },
   {
     "id": "vostok-3",
@@ -698,6 +777,25 @@
     "info_url": "https://en.wikipedia.org/wiki/Ranger_7"
   },
   {
+    "id": "syncom-3",
+    "name": "Syncom 3",
+    "date": "1964-08-19T12:15:00Z",
+    "organization": [
+      "NASA"
+    ],
+    "vehicle": "Delta D",
+    "mission_type": [
+      "Communications Satellite"
+    ],
+    "launch_site": "Cape Canaveral LC-17A",
+    "success": true,
+    "destination": [
+      "Geostationary Orbit"
+    ],
+    "details": "First communications satellite placed in geostationary orbit. Syncom 3 relayed television coverage of the 1964 Tokyo Olympic Games across the Pacific.",
+    "info_url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1964-047A"
+  },
+  {
     "id": "voskhod-1",
     "name": "Voskhod 1",
     "date": "1964-10-12T07:30:00Z",
@@ -886,6 +984,25 @@
     ],
     "details": "Luna 5 was intended to achieve a soft landing on the Moon, but due to a guidance failure, it crash-landed on the lunar surface.",
     "info_url": "https://en.wikipedia.org/wiki/Luna_5"
+  },
+  {
+    "id": "gemini-iv",
+    "name": "Gemini IV",
+    "date": "1965-06-03T15:15:59Z",
+    "organization": [
+      "NASA"
+    ],
+    "vehicle": "Titan II GLV",
+    "mission_type": [
+      "Crewed Flight"
+    ],
+    "launch_site": "Cape Canaveral LC-19",
+    "success": true,
+    "destination": [
+      "Earth Orbit"
+    ],
+    "details": "Four-day crewed Gemini mission by James McDivitt and Ed White. White performed the first American spacewalk, a key step toward later Apollo lunar operations.",
+    "info_url": "https://www.nasa.gov/mission/gemini-iv"
   },
   {
     "id": "luna-6",
@@ -1115,6 +1232,26 @@
     ],
     "details": "Uncrewed Agena‑D upper stage outfitted as a docking target for Gemini 8. Launched about 6 hours before the crewed Gemini to practice orbital rendezvous and docking—the first-ever docking of two spacecraft in orbit.",
     "info_url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1966-019A"
+  },
+  {
+    "id": "gemini-viii",
+    "name": "Gemini VIII",
+    "date": "1966-03-16T16:41:02Z",
+    "organization": [
+      "NASA"
+    ],
+    "vehicle": "Titan II GLV",
+    "mission_type": [
+      "Crewed Flight",
+      "Technology Demonstration"
+    ],
+    "launch_site": "Cape Canaveral LC-19",
+    "success": true,
+    "destination": [
+      "Earth Orbit"
+    ],
+    "details": "Neil Armstrong and David Scott achieved the first docking of two spacecraft in orbit with an Agena target vehicle, then safely recovered from a serious thruster malfunction.",
+    "info_url": "https://www.nasa.gov/mission/gemini-viii/"
   },
   {
     "id": "luna-10",
@@ -2359,6 +2496,26 @@
     ],
     "details": "Apollo 16 was the fifth mission to land humans on the Moon and the first to target the lunar highlands. It deployed a lunar rover and returned 95 kg of samples. The mission lasted 11 days and included three EVAs.",
     "info_url": "https://en.wikipedia.org/wiki/Apollo_16"
+  },
+  {
+    "id": "landsat-1",
+    "name": "Landsat 1",
+    "date": "1972-07-23T17:06:00Z",
+    "organization": [
+      "NASA",
+      "USGS"
+    ],
+    "vehicle": "Delta 900",
+    "mission_type": [
+      "Earth Observation"
+    ],
+    "launch_site": "Vandenberg Air Force Base SLC-2W",
+    "success": true,
+    "destination": [
+      "Earth Orbit"
+    ],
+    "details": "Launched as ERTS-1, Landsat 1 was the first satellite dedicated to monitoring Earth’s land surfaces and began the longest-running continuous Earth-observation satellite program.",
+    "info_url": "https://science.nasa.gov/mission/landsat/landsat-1/"
   },
   {
     "id": "sas-2",
@@ -4063,6 +4220,25 @@
     "info_url": "https://www.nasa.gov/mission_pages/chandra"
   },
   {
+    "id": "xmm-newton",
+    "name": "XMM-Newton",
+    "date": "1999-12-10T14:32:00Z",
+    "organization": [
+      "ESA"
+    ],
+    "vehicle": "Ariane 5",
+    "mission_type": [
+      "Space Telescope"
+    ],
+    "launch_site": "Europe's Spaceport, Kourou",
+    "success": true,
+    "destination": [
+      "Earth Orbit"
+    ],
+    "details": "ESA’s flagship X-ray observatory, designed to study black holes, neutron stars, galaxy clusters, stellar activity, and other hot and extreme phenomena across the universe.",
+    "info_url": "https://www.esa.int/Science_Exploration/Space_Science/XMM-Newton"
+  },
+  {
     "id": "terra",
     "name": "Terra (EOS AM-1)",
     "date": "1999-12-18T18:57:00Z",
@@ -4134,6 +4310,25 @@
     "info_url": "https://en.wikipedia.org/wiki/2001_Mars_Odyssey"
   },
   {
+    "id": "wmap",
+    "name": "Wilkinson Microwave Anisotropy Probe (WMAP)",
+    "date": "2001-06-30T19:46:46Z",
+    "organization": [
+      "NASA"
+    ],
+    "vehicle": "Delta II 7425-10",
+    "mission_type": [
+      "Space Telescope"
+    ],
+    "launch_site": "Cape Canaveral SLC-17B",
+    "success": true,
+    "destination": [
+      "Sun-Earth L2"
+    ],
+    "details": "Mapped tiny temperature differences in the cosmic microwave background, refining measurements of the universe’s age, contents, geometry, and early evolution.",
+    "info_url": "https://science.nasa.gov/mission/wmap/"
+  },
+  {
     "id": "genesis",
     "name": "Genesis",
     "date": "2001-08-08T16:13:00Z",
@@ -4192,6 +4387,25 @@
     ],
     "details": "The Comet Nucleus Tour (CONTOUR) was intended to fly by and study the nuclei of comets. Contact was lost after a planned rocket burn, likely due to disintegration.",
     "info_url": "https://en.wikipedia.org/wiki/CONTOUR"
+  },
+  {
+    "id": "integral",
+    "name": "INTEGRAL",
+    "date": "2002-10-17T04:41:00Z",
+    "organization": [
+      "ESA"
+    ],
+    "vehicle": "Proton-K / Blok DM-2",
+    "mission_type": [
+      "Space Telescope"
+    ],
+    "launch_site": "Baikonur Cosmodrome",
+    "success": true,
+    "destination": [
+      "Earth Orbit"
+    ],
+    "details": "ESA gamma-ray observatory that observed violent cosmic events such as gamma-ray bursts, black holes, supernovae, and neutron stars across gamma-ray, X-ray, and visible wavelengths.",
+    "info_url": "https://www.esa.int/Science_Exploration/Space_Science/Integral"
   },
   {
     "id": "sts-107",
@@ -4617,6 +4831,25 @@
     "info_url": "https://en.wikipedia.org/wiki/Chang%27e_1"
   },
   {
+    "id": "fermi",
+    "name": "Fermi Gamma-ray Space Telescope",
+    "date": "2008-06-11T16:05:00Z",
+    "organization": [
+      "NASA"
+    ],
+    "vehicle": "Delta II 7920-H",
+    "mission_type": [
+      "Space Telescope"
+    ],
+    "launch_site": "Cape Canaveral SLC-17B",
+    "success": true,
+    "destination": [
+      "Earth Orbit"
+    ],
+    "details": "Space observatory for the most energetic light in the universe. Fermi studies gamma-ray bursts, pulsars, cosmic rays, active galaxies, and other high-energy phenomena.",
+    "info_url": "https://science.nasa.gov/mission/fermi/"
+  },
+  {
     "id": "chandrayaan-1",
     "name": "Chandrayaan-1",
     "date": "2008-10-22T00:52:00Z",
@@ -4672,6 +4905,25 @@
     ],
     "details": "The Herschel Space Observatory observed the far-infrared and submillimeter wavelengths, helping scientists study star formation, galaxies, and the early universe.",
     "info_url": "https://en.wikipedia.org/wiki/Herschel_Space_Observatory"
+  },
+  {
+    "id": "planck",
+    "name": "Planck",
+    "date": "2009-05-14T13:12:02Z",
+    "organization": [
+      "ESA"
+    ],
+    "vehicle": "Ariane 5 ECA",
+    "mission_type": [
+      "Space Telescope"
+    ],
+    "launch_site": "Europe's Spaceport, Kourou",
+    "success": true,
+    "destination": [
+      "Sun-Earth L2"
+    ],
+    "details": "ESA observatory that mapped the cosmic microwave background with high precision, producing a landmark view of the early universe and its composition.",
+    "info_url": "https://www.esa.int/Science_Exploration/Space_Science/Planck_overview"
   },
   {
     "id": "lro",
@@ -5031,25 +5283,6 @@
     "info_url": "https://en.wikipedia.org/wiki/Hisaki_(satellite)"
   },
   {
-    "id": "mars-orbiter-mission",
-    "name": "Mars Orbiter Mission (Mangalyaan)",
-    "date": "2013-11-05T09:08:00Z",
-    "organization": [
-      "ISRO"
-    ],
-    "vehicle": "PSLV-XL C25",
-    "launch_site": "Satish Dhawan Space Centre",
-    "mission_type": [
-      "Orbiter"
-    ],
-    "success": true,
-    "destination": [
-      "Mars"
-    ],
-    "details": "India’s first interplanetary mission, Mangalyaan studied the Martian surface and atmosphere. It made ISRO the fourth space agency to reach Mars.",
-    "info_url": "https://en.wikipedia.org/wiki/Mars_Orbiter_Mission"
-  },
-  {
     "id": "mangalyaan",
     "name": "Mangalyaan (Mars Orbiter Mission)",
     "date": "2013-11-05T09:08:00Z",
@@ -5067,6 +5300,25 @@
       "Mars"
     ],
     "details": "India's first interplanetary mission, making ISRO the fourth space agency to reach Mars and the first to do so on its maiden attempt.",
+    "info_url": "https://en.wikipedia.org/wiki/Mars_Orbiter_Mission"
+  },
+  {
+    "id": "mars-orbiter-mission",
+    "name": "Mars Orbiter Mission (Mangalyaan)",
+    "date": "2013-11-05T09:08:00Z",
+    "organization": [
+      "ISRO"
+    ],
+    "vehicle": "PSLV-XL C25",
+    "launch_site": "Satish Dhawan Space Centre",
+    "mission_type": [
+      "Orbiter"
+    ],
+    "success": true,
+    "destination": [
+      "Mars"
+    ],
+    "details": "India’s first interplanetary mission, Mangalyaan studied the Martian surface and atmosphere. It made ISRO the fourth space agency to reach Mars.",
     "info_url": "https://en.wikipedia.org/wiki/Mars_Orbiter_Mission"
   },
   {
@@ -5107,6 +5359,26 @@
     ],
     "details": "Chang'e 3 was China's first lunar lander and deployed the Yutu rover, marking the first soft landing on the Moon since 1976.",
     "info_url": "https://en.wikipedia.org/wiki/Chang%27e_3"
+  },
+  {
+    "id": "gaia",
+    "name": "Gaia",
+    "date": "2013-12-19T09:12:00Z",
+    "organization": [
+      "ESA"
+    ],
+    "vehicle": "Soyuz-STB / Fregat-MT",
+    "mission_type": [
+      "Space Telescope",
+      "Astrometry"
+    ],
+    "launch_site": "Europe's Spaceport, Kourou",
+    "success": true,
+    "destination": [
+      "Sun-Earth L2"
+    ],
+    "details": "ESA astrometry mission that measured positions, motions, and properties of more than a billion stars, creating the most precise 3D map of the Milky Way.",
+    "info_url": "https://esoc.esa.int/content/gaia"
   },
   {
     "id": "sentinel-1a",
@@ -5244,6 +5516,25 @@
     "info_url": "https://www.blueorigin.com/news/new-shepard-makes-historic-landing/"
   },
   {
+    "id": "lisa-pathfinder",
+    "name": "LISA Pathfinder",
+    "date": "2015-12-03T04:04:00Z",
+    "organization": [
+      "ESA"
+    ],
+    "vehicle": "Vega",
+    "mission_type": [
+      "Technology Demonstration"
+    ],
+    "launch_site": "Europe's Spaceport, Kourou",
+    "success": true,
+    "destination": [
+      "Sun-Earth L1"
+    ],
+    "details": "Technology demonstrator for space-based gravitational-wave detection. It proved precision free-fall and laser metrology techniques needed for the future LISA observatory.",
+    "info_url": "https://www.esa.int/Science_Exploration/Space_Science/LISA_Pathfinder_overview"
+  },
+  {
     "id": "exomars-tgo",
     "name": "ExoMars Trace Gas Orbiter",
     "date": "2016-03-14T09:31:00Z",
@@ -5321,6 +5612,25 @@
     ],
     "details": "First Falcon Heavy launch. Carried Elon Musk’s Tesla Roadster into space as a dummy payload.",
     "info_url": "https://www.spacex.com/launches/mission/?missionId=falcon-heavy-test"
+  },
+  {
+    "id": "tess",
+    "name": "TESS",
+    "date": "2018-04-18T22:51:00Z",
+    "organization": [
+      "NASA"
+    ],
+    "vehicle": "Falcon 9",
+    "mission_type": [
+      "Space Telescope"
+    ],
+    "launch_site": "Cape Canaveral SLC-40",
+    "success": true,
+    "destination": [
+      "Earth Orbit"
+    ],
+    "details": "Transiting Exoplanet Survey Satellite, designed to survey bright nearby stars for planets and provide prime targets for detailed follow-up by larger observatories.",
+    "info_url": "https://www.nasa.gov/tess/"
   },
   {
     "id": "insight",
@@ -5517,6 +5827,25 @@
     ],
     "details": "Chandrayaan-2 aimed to study the lunar surface. The orbiter continues to function, but the Vikram lander failed during descent.",
     "info_url": "https://en.wikipedia.org/wiki/Chandrayaan-2"
+  },
+  {
+    "id": "cheops",
+    "name": "CHEOPS",
+    "date": "2019-12-18T08:54:20Z",
+    "organization": [
+      "ESA"
+    ],
+    "vehicle": "Soyuz-Fregat",
+    "mission_type": [
+      "Space Telescope"
+    ],
+    "launch_site": "Europe's Spaceport, Kourou",
+    "success": true,
+    "destination": [
+      "Earth Orbit"
+    ],
+    "details": "ESA exoplanet observatory focused on high-precision measurements of known planets around bright nearby stars, helping determine their sizes and bulk densities.",
+    "info_url": "https://www.esa.int/Science_Exploration/Space_Science/Cheops"
   },
   {
     "id": "decade-2020s",
@@ -5777,7 +6106,7 @@
       "Flyby"
     ],
     "launch_site": "Cape Canaveral SLC‑41",
-    "success": null,
+    "success": true,
     "destination": [
       "Asteroid Belt",
       "Jupiter Trojans"
@@ -6004,6 +6333,25 @@
     "info_url": "https://www.faa.gov/newsroom/spacex-starship-super-heavy-flight-1"
   },
   {
+    "id": "euclid",
+    "name": "Euclid",
+    "date": "2023-07-01T15:12:00Z",
+    "organization": [
+      "ESA"
+    ],
+    "vehicle": "Falcon 9",
+    "mission_type": [
+      "Space Telescope"
+    ],
+    "launch_site": "Cape Canaveral SLC-40",
+    "success": true,
+    "destination": [
+      "Sun-Earth L2"
+    ],
+    "details": "ESA space telescope mapping billions of galaxies across more than a third of the sky to investigate dark matter, dark energy, and the expansion history of the universe.",
+    "info_url": "https://www.esa.int/Science_Exploration/Space_Science/Euclid"
+  },
+  {
     "id": "chandrayaan-3",
     "name": "Chandrayaan-3",
     "date": "2023-07-14T09:05:00Z",
@@ -6136,6 +6484,25 @@
     ],
     "details": "Peregrine Mission One was Astrobotic's attempt to deliver payloads to the Moon under NASA’s CLPS program. The mission suffered a propulsion failure shortly after launch.",
     "info_url": "https://en.wikipedia.org/wiki/Peregrine_Mission_One"
+  },
+  {
+    "id": "pace",
+    "name": "PACE",
+    "date": "2024-02-08T06:33:00Z",
+    "organization": [
+      "NASA"
+    ],
+    "vehicle": "Falcon 9",
+    "mission_type": [
+      "Earth Observation"
+    ],
+    "launch_site": "Cape Canaveral SLC-40",
+    "success": true,
+    "destination": [
+      "Earth Orbit"
+    ],
+    "details": "Plankton, Aerosol, Cloud, ocean Ecosystem mission. PACE studies ocean color, aerosols, clouds, air quality, and how the ocean and atmosphere exchange carbon.",
+    "info_url": "https://www.nasa.gov/news-release/nasa-launches-new-climate-mission-to-study-ocean-atmosphere/"
   },
   {
     "id": "im-1",
@@ -6335,6 +6702,26 @@
     "info_url": "https://www.spacex.com/launches/mission/?missionId=starship-flight-6"
   },
   {
+    "id": "proba-3",
+    "name": "Proba-3",
+    "date": "2024-12-05T10:34:00Z",
+    "organization": [
+      "ESA"
+    ],
+    "vehicle": "PSLV-XL",
+    "mission_type": [
+      "Technology Demonstration",
+      "Solar Observatory"
+    ],
+    "launch_site": "Satish Dhawan Space Centre",
+    "success": true,
+    "destination": [
+      "Earth Orbit"
+    ],
+    "details": "Two-spacecraft precision formation-flying mission that creates artificial solar eclipses in orbit, allowing extended observations of the Sun’s faint corona.",
+    "info_url": "https://www.esa.int/Enabling_Support/Space_Engineering_Technology/Proba-3"
+  },
+  {
     "id": "blue-ghost-mission-1",
     "name": "Blue Ghost Mission 1",
     "date": "2025-01-15T06:11:00Z",
@@ -6432,6 +6819,44 @@
     "info_url": "https://www.spacex.com/launches/mission/?missionId=starship-flight-8"
   },
   {
+    "id": "punch",
+    "name": "PUNCH",
+    "date": "2025-03-12T03:10:00Z",
+    "organization": [
+      "NASA"
+    ],
+    "vehicle": "Falcon 9",
+    "mission_type": [
+      "Solar Observatory"
+    ],
+    "launch_site": "Vandenberg Space Force Base SLC-4E",
+    "success": true,
+    "destination": [
+      "Earth Orbit"
+    ],
+    "details": "Constellation of four small satellites launched with SPHEREx to image the Sun’s outer atmosphere and trace how the corona becomes the solar wind.",
+    "info_url": "https://www.nasa.gov/event/spherex/"
+  },
+  {
+    "id": "spherex",
+    "name": "SPHEREx",
+    "date": "2025-03-12T03:10:00Z",
+    "organization": [
+      "NASA"
+    ],
+    "vehicle": "Falcon 9",
+    "mission_type": [
+      "Space Telescope"
+    ],
+    "launch_site": "Vandenberg Space Force Base SLC-4E",
+    "success": true,
+    "destination": [
+      "Earth Orbit"
+    ],
+    "details": "Near-infrared space telescope making an all-sky spectral survey to study cosmic inflation, galaxy history, and the distribution of water and organic molecules in the Milky Way.",
+    "info_url": "https://www.nasa.gov/event/spherex/"
+  },
+  {
     "id": "fram2",
     "name": "Fram2",
     "date": "2025-04-01T01:46:50Z",
@@ -6492,6 +6917,26 @@
     "info_url": "https://english.www.gov.cn/news/202505/29/content_WS68379ed0c6d0868f4e8f2f19.html"
   },
   {
+    "id": "nisar",
+    "name": "NISAR",
+    "date": "2025-07-30T12:10:00Z",
+    "organization": [
+      "NASA",
+      "ISRO"
+    ],
+    "vehicle": "GSLV Mark II",
+    "mission_type": [
+      "Earth Observation"
+    ],
+    "launch_site": "Satish Dhawan Space Centre",
+    "success": true,
+    "destination": [
+      "Earth Orbit"
+    ],
+    "details": "NASA-ISRO Synthetic Aperture Radar mission, designed to scan nearly all of Earth’s land and ice surfaces twice every 12 days to track environmental change and natural hazards.",
+    "info_url": "https://science.nasa.gov/mission/nisar/mission-overview/"
+  },
+  {
     "id": "starship-ft10",
     "name": "Starship Flight Test 10",
     "date": "2025-08-26T23:30:00Z",
@@ -6512,25 +6957,63 @@
     "info_url": "https://www.spacex.com/launches/mission/?missionId=starship-flight-10"
   },
   {
-    "id": "destiny-plus",
-    "name": "DESTINY+",
-    "date": "2028-04-01T00:00:00Z",
+    "id": "carruthers-geocorona-observatory",
+    "name": "Carruthers Geocorona Observatory",
+    "date": "2025-09-24T11:30:00Z",
     "organization": [
-      "JAXA"
+      "NASA"
     ],
-    "vehicle": "H3",
-    "launch_site": "Tanegashima Space Center",
+    "vehicle": "Falcon 9",
     "mission_type": [
-      "Flyby",
-      "Technology Demonstration"
+      "Earth Observation",
+      "Heliophysics"
     ],
-    "success": null,
+    "launch_site": "Kennedy Space Center LC-39A",
+    "success": true,
     "destination": [
-      "Phaethon",
-      "Interplanetary Space"
+      "Sun-Earth L1"
     ],
-    "details": "JAXA's DESTINY+ is now targeting a Japanese fiscal year 2028 launch as a rideshare with ESA's RAMSES on an H3 rocket. The revised mission will fly by Apophis first, then continue toward a Phaethon flyby in the 2030 timeframe while demonstrating deep-space electric-propulsion operations.",
-    "info_url": "https://destiny.isas.jaxa.jp/"
+    "details": "Rideshare with IMAP that observes ultraviolet emissions from Earth’s exosphere and geocorona, improving understanding of how the outer atmosphere responds to solar activity.",
+    "info_url": "https://science.nasa.gov/blogs/imap/2025/09/24/meet-missions-launching-with-imap/"
+  },
+  {
+    "id": "imap",
+    "name": "IMAP",
+    "date": "2025-09-24T11:30:00Z",
+    "organization": [
+      "NASA"
+    ],
+    "vehicle": "Falcon 9",
+    "mission_type": [
+      "Heliophysics"
+    ],
+    "launch_site": "Kennedy Space Center LC-39A",
+    "success": true,
+    "destination": [
+      "Sun-Earth L1"
+    ],
+    "details": "Interstellar Mapping and Acceleration Probe, sent to L1 to map the boundary of the heliosphere and study energetic particles from the Sun to interstellar space.",
+    "info_url": "https://www.nasa.gov/event/imap/"
+  },
+  {
+    "id": "swfo-l1",
+    "name": "SWFO-L1",
+    "date": "2025-09-24T11:30:00Z",
+    "organization": [
+      "NOAA",
+      "NASA"
+    ],
+    "vehicle": "Falcon 9",
+    "mission_type": [
+      "Space Weather"
+    ],
+    "launch_site": "Kennedy Space Center LC-39A",
+    "success": true,
+    "destination": [
+      "Sun-Earth L1"
+    ],
+    "details": "NOAA Space Weather Follow On-Lagrange 1 observatory, launched with IMAP to monitor solar wind and coronal mass ejections for operational space-weather forecasting.",
+    "info_url": "https://science.nasa.gov/blogs/imap/2025/09/24/liftoff-three-new-space-weather-spacecraft-soar-into-florida-sky/"
   },
   {
     "id": "starship-ft11",
@@ -6572,23 +7055,23 @@
     "info_url": "https://science.nasa.gov/mission/escapade/"
   },
   {
-    "id": "solar-polar-orbit-observatory",
-    "name": "Xihe-2 / Lagrange-V Solar Observatory",
-    "date": "2028-01-01T00:00:00Z",
+    "id": "artemis-2",
+    "name": "Artemis II",
+    "date": "2026-04-01T13:00:00Z",
     "organization": [
-      "CNSA"
+      "NASA"
     ],
-    "vehicle": "Long March 3B",
-    "launch_site": "Xichang Satellite Launch Center",
+    "vehicle": "SLS Block 1",
     "mission_type": [
-      "Solar Observatory"
+      "Flyby"
     ],
-    "success": null,
+    "launch_site": "Kennedy Space Center LC-39B",
+    "success": true,
     "destination": [
-      "Sun (Polar Orbit)"
+      "Moon"
     ],
-    "details": "China's Xihe-2, also called the Lagrange-V Solar Observatory, entered development after CNSA approval in late 2025 and is planned for a 2028-2029 launch to the Sun-Earth L5 point for solar-eruption and space-weather monitoring.",
-    "info_url": "https://astronomy.nju.edu.cn/EN/NewsEvents/20260203/i358081.html"
+    "details": "Artemis II launched on April 1, 2026 and returned on April 10 after carrying four astronauts around the Moon. It was the first crewed flight of NASA's SLS-Orion system and the first crewed lunar mission since Apollo.",
+    "info_url": "https://www.nasa.gov/mission/artemis-ii/"
   },
   {
     "id": "change‑7",
@@ -6613,43 +7096,23 @@
     "info_url": "https://english.www.gov.cn/english.www.gov.cn/news/202502/04/content_WS67a1612bc6d0868f4e8ef55b.html"
   },
   {
-    "id": "starship-hls",
-    "name": "Starship HLS (Human Landing System)",
-    "date": "2027-01-01T00:00:00Z",
+    "id": "roman-space-telescope",
+    "name": "Nancy Grace Roman Space Telescope",
+    "date": "2026-09-01T00:00:00Z",
     "organization": [
-      "SpaceX",
       "NASA"
     ],
-    "vehicle": "Starship HLS",
+    "vehicle": "Falcon Heavy",
     "mission_type": [
-      "Lander"
+      "Space Telescope"
     ],
-    "launch_site": null,
+    "launch_site": "Kennedy Space Center",
     "success": null,
     "destination": [
-      "Moon"
+      "Sun-Earth L2"
     ],
-    "details": "SpaceX's Starship Human Landing System remains NASA's lunar-lander architecture for Artemis, but its near-term role has shifted toward uncrewed demonstrations and docking/proximity-operations testing needed before a later crewed surface landing.",
-    "info_url": "https://www.nasa.gov/reference/human-landing-systems/"
-  },
-  {
-    "id": "artemis-2",
-    "name": "Artemis II",
-    "date": "2026-04-01T13:00:00Z",
-    "organization": [
-      "NASA"
-    ],
-    "vehicle": "SLS Block 1",
-    "mission_type": [
-      "Flyby"
-    ],
-    "launch_site": "Kennedy Space Center LC-39B",
-    "success": true,
-    "destination": [
-      "Moon"
-    ],
-    "details": "Artemis II launched on April 1, 2026 and returned on April 10 after carrying four astronauts around the Moon. It was the first crewed flight of NASA's SLS-Orion system and the first crewed lunar mission since Apollo.",
-    "info_url": "https://www.nasa.gov/mission/artemis-ii/"
+    "details": "Wide-field infrared observatory targeting launch as soon as early September 2026 and no later than May 2027. Roman will study dark energy, exoplanets, and infrared astrophysics.",
+    "info_url": "https://science.nasa.gov/mission/roman-space-telescope/"
   },
   {
     "id": "mmx",
@@ -6697,24 +7160,62 @@
     "info_url": "https://www.nasa.gov/mission/artemis-iii/"
   },
   {
-    "id": "rosalind-franklin",
-    "name": "Rosalind Franklin (ExoMars Rover)",
-    "date": "2028-01-01T00:00:00Z",
+    "id": "plato",
+    "name": "PLATO",
+    "date": "2027-01-01T00:00:00Z",
     "organization": [
-      "ESA",
-      "NASA"
+      "ESA"
     ],
-    "vehicle": "Falcon Heavy",
-    "launch_site": "Kennedy Space Center LC-39A",
+    "vehicle": "Ariane 6",
     "mission_type": [
-      "Rover"
+      "Space Telescope"
     ],
+    "launch_site": "Europe's Spaceport, Kourou",
     "success": null,
     "destination": [
-      "Mars"
+      "Sun-Earth L2"
     ],
-    "details": "ESA's Rosalind Franklin rover is being rebuilt for a no-earlier-than-late-2028 launch with NASA support, including the launch service, braking engines, heater units and instrument contributions. It will search for biosignatures below the Martian surface using a two-meter drill.",
-    "info_url": "https://explorationscience.esa.int/project/exomars-rosalind-franklin-rfm/"
+    "details": "ESA exoplanet mission planned for January 2027. PLATO will use 26 cameras to find and characterize terrestrial planets around bright stars, including worlds in habitable-zone orbits.",
+    "info_url": "https://www.esa.int/Science_Exploration/Space_Science/Plato"
+  },
+  {
+    "id": "starship-hls",
+    "name": "Starship HLS (Human Landing System)",
+    "date": "2027-01-01T00:00:00Z",
+    "organization": [
+      "SpaceX",
+      "NASA"
+    ],
+    "vehicle": "Starship HLS",
+    "mission_type": [
+      "Lander"
+    ],
+    "launch_site": null,
+    "success": null,
+    "destination": [
+      "Moon"
+    ],
+    "details": "SpaceX's Starship Human Landing System remains NASA's lunar-lander architecture for Artemis, but its near-term role has shifted toward uncrewed demonstrations and docking/proximity-operations testing needed before a later crewed surface landing.",
+    "info_url": "https://www.nasa.gov/reference/human-landing-systems/"
+  },
+  {
+    "id": "change‑8",
+    "name": "Chang’e 8",
+    "date": "2028-01-01T00:00:00Z",
+    "organization": [
+      "CNSA"
+    ],
+    "vehicle": "Long March 5",
+    "mission_type": [
+      "Technology Demonstration"
+    ],
+    "launch_site": "Wenchang Satellite Launch Center",
+    "success": null,
+    "destination": [
+      "Moon"
+    ],
+    "details": "Technology‑testing mission aimed at supporting future lunar base and ISRU operations on the south pole.",
+    "info_url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/cnsa_moon_future.html"
   },
   {
     "id": "mbr-explorer",
@@ -6737,23 +7238,105 @@
     "info_url": "https://space.gov.ae/en/initiatives-and-projects/uae-mission-to-asteroid-belt-ema"
   },
   {
-    "id": "change‑8",
-    "name": "Chang’e 8",
+    "id": "rosalind-franklin",
+    "name": "Rosalind Franklin (ExoMars Rover)",
+    "date": "2028-01-01T00:00:00Z",
+    "organization": [
+      "ESA",
+      "NASA"
+    ],
+    "vehicle": "Falcon Heavy",
+    "launch_site": "Kennedy Space Center LC-39A",
+    "mission_type": [
+      "Rover"
+    ],
+    "success": null,
+    "destination": [
+      "Mars"
+    ],
+    "details": "ESA's Rosalind Franklin rover is being rebuilt for a no-earlier-than-late-2028 launch with NASA support, including the launch service, braking engines, heater units and instrument contributions. It will search for biosignatures below the Martian surface using a two-meter drill.",
+    "info_url": "https://explorationscience.esa.int/project/exomars-rosalind-franklin-rfm/"
+  },
+  {
+    "id": "solar-polar-orbit-observatory",
+    "name": "Xihe-2 / Lagrange-V Solar Observatory",
     "date": "2028-01-01T00:00:00Z",
     "organization": [
       "CNSA"
     ],
-    "vehicle": "Long March 5",
+    "vehicle": "Long March 3B",
+    "launch_site": "Xichang Satellite Launch Center",
     "mission_type": [
-      "Technology Demonstration"
+      "Solar Observatory"
     ],
-    "launch_site": "Wenchang Satellite Launch Center",
+    "success": null,
+    "destination": [
+      "Sun (Polar Orbit)"
+    ],
+    "details": "China's Xihe-2, also called the Lagrange-V Solar Observatory, entered development after CNSA approval in late 2025 and is planned for a 2028-2029 launch to the Sun-Earth L5 point for solar-eruption and space-weather monitoring.",
+    "info_url": "https://astronomy.nju.edu.cn/EN/NewsEvents/20260203/i358081.html"
+  },
+  {
+    "id": "artemis-iv",
+    "name": "Artemis IV",
+    "date": "2028-02-01T00:00:00Z",
+    "organization": [
+      "NASA"
+    ],
+    "vehicle": "SLS Block 1B / Orion",
+    "mission_type": [
+      "Crewed Flight",
+      "Lander"
+    ],
+    "launch_site": "Kennedy Space Center LC-39B",
     "success": null,
     "destination": [
       "Moon"
     ],
-    "details": "Technology‑testing mission aimed at supporting future lunar base and ISRU operations on the south pole.",
-    "info_url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/cnsa_moon_future.html"
+    "details": "Crewed lunar surface mission targeted for early 2028. Artemis IV will send astronauts to lunar orbit, where two crew members are planned to descend near the Moon’s south pole.",
+    "info_url": "https://www.nasa.gov/mission/artemis-iv"
+  },
+  {
+    "id": "destiny-plus",
+    "name": "DESTINY+",
+    "date": "2028-04-01T00:00:00Z",
+    "organization": [
+      "JAXA"
+    ],
+    "vehicle": "H3",
+    "launch_site": "Tanegashima Space Center",
+    "mission_type": [
+      "Flyby",
+      "Technology Demonstration"
+    ],
+    "success": null,
+    "destination": [
+      "Phaethon",
+      "Interplanetary Space"
+    ],
+    "details": "JAXA's DESTINY+ is now targeting a Japanese fiscal year 2028 launch as a rideshare with ESA's RAMSES on an H3 rocket. The revised mission will fly by Apophis first, then continue toward a Phaethon flyby in the 2030 timeframe while demonstrating deep-space electric-propulsion operations.",
+    "info_url": "https://destiny.isas.jaxa.jp/"
+  },
+  {
+    "id": "lupex",
+    "name": "Lunar Polar Exploration (LUPEX)",
+    "date": "2028-04-01T00:00:00Z",
+    "organization": [
+      "JAXA",
+      "ISRO"
+    ],
+    "vehicle": "H3",
+    "mission_type": [
+      "Lander",
+      "Rover"
+    ],
+    "launch_site": "Tanegashima Space Center",
+    "success": null,
+    "destination": [
+      "Moon"
+    ],
+    "details": "Joint JAXA-ISRO lunar south-pole lander and rover planned no earlier than 2028. LUPEX will investigate the quantity, quality, and distribution of lunar water resources.",
+    "info_url": "https://humans-in-space.jaxa.jp/en/biz-lab/tech/lupex/"
   },
   {
     "id": "dragonfly",
@@ -6773,6 +7356,26 @@
     ],
     "details": "A dual-quadcopter lander to explore Titan’s surface and chemistry; first powered aircraft to operate off Earth. Launch is planned for July 2028.",
     "info_url": "https://science.nasa.gov/mission/dragonfly/"
+  },
+  {
+    "id": "artemis-v",
+    "name": "Artemis V",
+    "date": "2028-11-01T00:00:00Z",
+    "organization": [
+      "NASA"
+    ],
+    "vehicle": "SLS Block 1B / Orion",
+    "mission_type": [
+      "Crewed Flight",
+      "Lander"
+    ],
+    "launch_site": "Kennedy Space Center LC-39B",
+    "success": null,
+    "destination": [
+      "Moon"
+    ],
+    "details": "Crewed lunar surface mission targeted for late 2028, expected to continue Artemis south-pole exploration and begin broader buildout toward a sustained lunar presence.",
+    "info_url": "https://www.nasa.gov/event/artemis-v/"
   },
   {
     "id": "comet-interceptor",
@@ -6848,42 +7451,23 @@
     "info_url": "https://en.wikipedia.org/wiki/Tianwen-4"
   },
   {
-    "id": "venus-orbiter-mission",
-    "name": "Venus Orbiter Mission (Shukrayaan-1)",
-    "date": "2031-01-01T00:00:00Z",
-    "organization": [
-      "ISRO"
-    ],
-    "vehicle": "GSLV Mk II",
-    "launch_site": "Satish Dhawan Space Centre",
-    "mission_type": [
-      "Orbiter"
-    ],
-    "success": null,
-    "destination": [
-      "Venus"
-    ],
-    "details": "Shukrayaan-1 is India’s first mission to Venus, aimed at studying the planet’s surface and atmosphere. It will carry a suite of instruments to investigate volcanic activity, atmospheric chemistry, and solar interactions.",
-    "info_url": "https://en.wikipedia.org/wiki/Shukrayaan-1"
-  },
-  {
-    "id": "envision",
-    "name": "EnVision",
+    "id": "ariel",
+    "name": "Ariel",
     "date": "2031-01-01T00:00:00Z",
     "organization": [
       "ESA"
     ],
     "vehicle": "Ariane 6",
-    "launch_site": "Guiana Space Centre",
     "mission_type": [
-      "Orbiter"
+      "Space Telescope"
     ],
+    "launch_site": "Europe's Spaceport, Kourou",
     "success": null,
     "destination": [
-      "Venus"
+      "Sun-Earth L2"
     ],
-    "details": "EnVision is a planned ESA mission to study Venus’s atmosphere, surface, and internal structure. It will build on the legacy of missions like Venus Express and aims to better understand planetary evolution.",
-    "info_url": "https://www.esa.int/Science_Exploration/Space_Science/Envision/Envision_factsheet"
+    "details": "ESA exoplanet observatory planned for 2031. Ariel will survey the atmospheres of about a thousand exoplanets to study their chemistry, clouds, and weather.",
+    "info_url": "https://www.esa.int/Science_Exploration/Space_Science/Ariel"
   },
   {
     "id": "davinci",
@@ -6905,6 +7489,44 @@
     "info_url": "https://science.nasa.gov/mission/davinci/"
   },
   {
+    "id": "envision",
+    "name": "EnVision",
+    "date": "2031-01-01T00:00:00Z",
+    "organization": [
+      "ESA"
+    ],
+    "vehicle": "Ariane 6",
+    "launch_site": "Guiana Space Centre",
+    "mission_type": [
+      "Orbiter"
+    ],
+    "success": null,
+    "destination": [
+      "Venus"
+    ],
+    "details": "EnVision is a planned ESA mission to study Venus’s atmosphere, surface, and internal structure. It will build on the legacy of missions like Venus Express and aims to better understand planetary evolution.",
+    "info_url": "https://www.esa.int/Science_Exploration/Space_Science/Envision/Envision_factsheet"
+  },
+  {
+    "id": "venus-orbiter-mission",
+    "name": "Venus Orbiter Mission (Shukrayaan-1)",
+    "date": "2031-01-01T00:00:00Z",
+    "organization": [
+      "ISRO"
+    ],
+    "vehicle": "GSLV Mk II",
+    "launch_site": "Satish Dhawan Space Centre",
+    "mission_type": [
+      "Orbiter"
+    ],
+    "success": null,
+    "destination": [
+      "Venus"
+    ],
+    "details": "Shukrayaan-1 is India’s first mission to Venus, aimed at studying the planet’s surface and atmosphere. It will carry a suite of instruments to investigate volcanic activity, atmospheric chemistry, and solar interactions.",
+    "info_url": "https://en.wikipedia.org/wiki/Shukrayaan-1"
+  },
+  {
     "id": "veritas",
     "name": "VERITAS",
     "date": "2031-06-01T09:34:00Z",
@@ -6922,5 +7544,24 @@
     ],
     "details": "Will map Venus’s surface with high-resolution radar and spectroscopy to understand its tectonic history, volcanic processes, and atmospheric composition. Launch targeted mid-2031.",
     "info_url": "https://science.nasa.gov/mission/veritas/"
+  },
+  {
+    "id": "lisa",
+    "name": "LISA",
+    "date": "2035-01-01T00:00:00Z",
+    "organization": [
+      "ESA"
+    ],
+    "vehicle": "Ariane 6",
+    "mission_type": [
+      "Space Telescope"
+    ],
+    "launch_site": "Europe's Spaceport, Kourou",
+    "success": null,
+    "destination": [
+      "Heliocentric Orbit"
+    ],
+    "details": "Laser Interferometer Space Antenna, ESA’s planned 2035 three-spacecraft gravitational-wave observatory for detecting ripples in spacetime from massive cosmic events.",
+    "info_url": "https://www.esa.int/Science_Exploration/Space_Science/LISA"
   }
 ]

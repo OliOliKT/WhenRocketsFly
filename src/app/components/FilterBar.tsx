@@ -3,6 +3,11 @@
 import { useEffect, useMemo, useState } from "react";
 import { HiChevronDown, HiAdjustments } from "react-icons/hi";
 import type { Launch } from "../types";
+import {
+  normalizeDestination,
+  normalizeMissionType,
+  normalizeOrganization
+} from "../filterGroups";
 
 type FilterBarProps = {
   launches: Launch[];
@@ -27,7 +32,7 @@ export default function FilterBar({ launches, onFilterChange }: FilterBarProps) 
         new Set(
           launches.flatMap(l =>
             Array.isArray(l.mission_type) ? l.mission_type : [l.mission_type]
-          ).filter(Boolean)
+          ).filter(Boolean).map(normalizeMissionType)
         )
       ).sort(),
     [launches]
@@ -39,7 +44,7 @@ export default function FilterBar({ launches, onFilterChange }: FilterBarProps) 
         new Set(
           launches.flatMap(l =>
             Array.isArray(l.destination) ? l.destination : [l.destination]
-          ).filter(Boolean)
+          ).filter(Boolean).map(normalizeDestination)
         )
       ).sort(),
     [launches]
@@ -51,7 +56,7 @@ export default function FilterBar({ launches, onFilterChange }: FilterBarProps) 
         new Set(
           launches.flatMap(l =>
             Array.isArray(l.organization) ? l.organization : [l.organization]
-          ).filter(Boolean)
+          ).filter(Boolean).map(normalizeOrganization)
         )
       ).sort(),
     [launches]

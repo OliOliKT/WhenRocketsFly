@@ -204,7 +204,7 @@ export default function Timeline({ launches, statusFilter, decadeRefs }: Timelin
                     style={{ color: cardColor }}
                     className="inline-block mt-3 text-sm hover:text-white hover:underline transition"
                   >
-                    🔗 Learn more
+                    Learn more
                   </a>
                 )}
               </div>
